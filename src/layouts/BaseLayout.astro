@@ -1,0 +1,60 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  image = '/images/zeta-social-preview.svg'
+} = Astro.props;
+
+const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
+const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a2441" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Zeta',
+      description,
+      url: canonical.origin,
+      leader: {
+        '@type': 'Person',
+        name: 'Shane Villasor Perez',
+        jobTitle: 'Branch Manager'
+      }
+    })} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <script src="/scripts/site.js" defer></script>
+  </body>
+</html>

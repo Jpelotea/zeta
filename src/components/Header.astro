@@ -1,0 +1,37 @@
+---
+const navItems = [
+  { href: '/about', label: 'About Zeta' },
+  { href: '/philosophy', label: 'Builder of Builders' },
+  { href: '/careers', label: 'Careers' },
+  { href: '/leadership', label: 'Leadership' },
+  { href: '/achievements', label: 'Achievements' },
+  { href: '/education', label: 'Education' }
+];
+---
+<header class="site-header" data-site-header>
+  <div class="shell header-inner">
+    <a class="brand" href="/" aria-label="Zeta home">
+      <span class="brand-mark" aria-hidden="true">Z</span>
+      <span class="brand-copy">
+        <strong>Zeta</strong>
+        <small>Leadership Community</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+      <span class="sr-only">Toggle navigation</span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation" data-nav>
+      <ul>
+        {navItems.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+      <a class="button button-small button-primary nav-cta" href="/careers/apply">Be One of Us</a>
+    </nav>
+  </div>
+</header>
