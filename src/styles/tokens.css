@@ -1,53 +1,308 @@
-/* Brand tokens and expanded spacing scale for Zeta */
+/* 
+ * Comprehensive Design Token System — Phase 1, Milestone 1.2
+ * Single source of truth for all visual design decisions.
+ * Extracted from global.css to eliminate hard-coded values.
+ * 
+ * DESIGN PRINCIPLE: No component should contain hard-coded colors, spacing, 
+ * typography, shadows, radii, transitions, or z-index values after this system is in place.
+ */
+
 :root {
-  /* Colors */
-  --color-brand-primary: #0F2744; /* Zeta primary */
-  --color-brand-secondary: #0E6E6D; /* Zeta secondary */
-  --color-accent: #D7A63B;
+  /* ============================================
+     1. BRAND COLORS (Extracted from global.css)
+     ============================================ */
+  --navy-950: #061a30;
+  --navy-900: #0a2441;
+  --navy-800: #14395d;
+  --teal-700: #0f6668;
+  --teal-600: #14797a;
+  --gold-500: #d5ad57;
+  --gold-300: #f0d99d;
+  --ivory-100: #f7f6f1;
+  --ivory-200: #efede4;
+  --white: #ffffff;
+  --ink-900: #14202d;
+  --ink-700: #364756;
+  --ink-500: #61717e;
+  --line: #d8dedf;
+  --success: #1f6b47;
 
-  --color-surface: #FFFFFF;
-  --color-surface-muted: #F8FAFC;
+  /* Semantic color aliases for clarity */
+  --color-brand-primary: var(--navy-900);
+  --color-brand-primary-dark: var(--navy-950);
+  --color-brand-secondary: var(--teal-700);
+  --color-accent: var(--gold-300);
+  --color-accent-alt: var(--gold-500);
+  --color-surface-default: var(--white);
+  --color-surface-muted: var(--ivory-100);
+  --color-surface-alt: var(--ivory-200);
+  --color-text-primary: var(--ink-900);
+  --color-text-secondary: var(--ink-700);
+  --color-text-tertiary: var(--ink-500);
+  --color-text-light: #dce7ee;
+  --color-text-inverse: var(--white);
+  --color-border: var(--line);
+  --color-border-subtle: rgba(10, 36, 65, 0.08);
+  --color-status-success: var(--success);
 
-  --color-text: #1B2430;
-  --color-text-muted: #64748B;
+  /* ============================================
+     2. TYPOGRAPHY
+     ============================================ */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: Iowan Old Style, Baskerville, "Times New Roman", serif;
 
-  --color-border: #E5E7EB;
+  /* Font weights — extracted from global.css usage */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
 
-  --color-success: #1E8E5A;
-  --color-warning: #F4B400;
-  --color-error: #D93025;
-  --color-info: #2563EB;
+  /* Line heights */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.6;
+  --line-height-prose: 1.5;
+  --line-height-display: 0.98;
+  --line-height-heading: 1.02;
+  --line-height-card: 1.08;
+  --line-height-quote: 1.5;
 
-  /* Spacing scale (8-point based, extended) */
-  --space-0: 0;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 32px;
-  --space-6: 40px;
-  --space-7: 48px;
-  --space-8: 64px;
-  --space-9: 80px;
-  --space-10: 96px;
-  --space-11: 120px;
+  /* Spacing tokens extracted from global.css */
+  --space-2xs: 0.25rem;    /* 4px — fine adjustments */
+  --space-xs: 0.4rem;      /* 6.4px — minimal spacing */
+  --space-sm: 0.5rem;      /* 8px */
+  --space-md: 0.6rem;      /* 9.6px */
+  --space-base: 0.7rem;    /* 11.2px */
+  --space-lg: 0.75rem;     /* 12px */
+  --space-xl: 0.8rem;      /* 12.8px */
+  --space-1: 0.9rem;       /* 14.4px */
+  --space-1xl: 1rem;       /* 16px */
+  --space-2: 1.2rem;       /* 19.2px */
+  --space-3: 1.4rem;       /* 22.4px */
+  --space-4: 1.5rem;       /* 24px */
+  --space-5: 1.6rem;       /* 25.6px */
+  --space-6: 1.8rem;       /* 28.8px */
+  --space-7: 2rem;         /* 32px */
+  --space-8: 2.4rem;       /* 38.4px */
+  --space-9: 2.5rem;       /* 40px */
+  --space-10: 2.6rem;      /* 41.6px */
+  --space-11: 3rem;        /* 48px */
+  --space-12: 3.5rem;      /* 56px */
+  --space-13: 4rem;        /* 64px */
+  --space-14: 5rem;        /* 80px */
+  --space-15: 6rem;        /* 96px */
+  --space-16: 7rem;        /* 112px */
+  --space-17: 12rem;       /* 192px — large decorative spacing */
 
-  /* Radii */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  /* Semantic spacing aliases */
+  --padding-xs: var(--space-lg);
+  --padding-sm: var(--space-4);
+  --padding-md: var(--space-7);
+  --padding-lg: var(--space-12);
+  --gap-tight: var(--space-xl);
+  --gap-normal: var(--space-1xl);
+  --gap-relaxed: var(--space-2);
+  --gap-loose: var(--space-3);
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(16,24,40,0.05);
-  --shadow-md: 0 6px 18px rgba(16,24,40,0.08);
+  /* ============================================
+     3. BORDER RADIUS
+     ============================================ */
+  --radius-xs: 0.4rem;    /* 6.4px */
+  --radius-sm: 0.7rem;    /* 11.2px */
+  --radius-md: 1rem;      /* 16px */
+  --radius-lg: 1.25rem;   /* 20px */
+  --radius-xl: 2rem;      /* 32px */
+  --radius-pill: 999px;   /* Fully rounded */
 
-  /* Transitions */
-  --transition-fast: 150ms;
-  --transition-base: 250ms;
+  /* Component-specific radii */
+  --radius-form-input: 0.6rem;
+  --radius-focus-ring: 0.4rem;
 
-  /* Container widths */
-  --container-sm: 640px;
-  --container-md: 900px;
-  --container-lg: 1100px;
-  --container-xl: 1280px;
+  /* ============================================
+     4. SHADOWS
+     ============================================ */
+  --shadow-sm: 0 10px 30px rgba(6, 26, 48, 0.08);
+  --shadow-md: 0 6px 18px rgba(16, 24, 40, 0.08);
+  --shadow-lg: 0 24px 70px rgba(6, 26, 48, 0.16);
+
+  /* Component-specific shadows */
+  --shadow-button-primary: 0 10px 24px rgba(10, 36, 65, 0.2);
+  --shadow-button-accent: 0 12px 28px rgba(240, 217, 157, 0.2);
+
+  /* ============================================
+     5. TRANSITIONS
+     ============================================ */
+  --duration-fast: 0.2s;
+  --duration-base: 0.25s;
+  --ease-default: ease;
+
+  /* ============================================
+     6. CONTAINER & LAYOUT
+     ============================================ */
+  --container-shell: min(1180px, calc(100% - 2rem));
+  --container-narrow: 820px;
+  --container-prose: 780px;
+  --container-max-width: 1180px;
+  --container-padding: 2rem;
+  --container-padding-mobile: 1.25rem;
+
+  /* Viewport-based gaps */
+  --gap-responsive: clamp(2rem, 6vw, 6rem);
+  --padding-block-section: clamp(4.5rem, 8vw, 8rem);
+  --padding-block-page-hero: clamp(5rem, 10vw, 8rem);
+  --padding-block-page-hero-compact: clamp(4rem, 7vw, 6rem);
+  --padding-block-final-cta: clamp(4rem, 8vw, 7rem);
+
+  /* Hero section specific layout tokens */
+  --hero-min-height: 780px;
+  --hero-visual-min-height: 560px;
+  --hero-grid-gap: clamp(2rem, 6vw, 6rem);
+
+  /* ============================================
+     7. Z-INDEX LAYERS
+     ============================================ */
+  --z-base: 0;
+  --z-relative: 1;
+  --z-floating: 2;
+  --z-floating-high: 3;
+  --z-dropdown: 100;
+  --z-sticky-header: 100;
+  --z-modal: 200;
+  --z-skip-link: 999;
+
+  /* ============================================
+     8. FOCUS & INTERACTION
+     ============================================ */
+  --focus-outline-width: 3px;
+  --focus-outline-offset: 4px;
+  --focus-color: var(--gold-500);
+
+  /* ============================================
+     9. FORM TOKENS
+     ============================================ */
+  --form-input-border: 1px solid #a9b4bb;
+  --form-input-border-focus: var(--teal-700);
+  --form-input-border-radius: 0.6rem;
+  --form-input-shadow-focus: 0 0 0 3px rgba(15, 102, 104, 0.15);
+  --form-select-min-height-multiple: 12rem;
+  --form-gap-vertical: 1.2rem;
+  --form-fieldset-padding: 1.6rem;
+  --form-label-font-weight: 700;
+  --form-checkbox-size: 1.1rem;
+  --form-checkbox-margin-top: 0.22rem;
+  --form-helper-font-size: 0.84rem;
+  --form-helper-font-weight: 400;
+
+  /* ============================================
+     10. HEADER & NAVIGATION
+     ============================================ */
+  --header-min-height: 5rem;
+  --header-gap: 1.5rem;
+  --header-nav-gap: 1.2rem;
+  --header-nav-font-size: 0.9rem;
+  --header-nav-font-weight: 650;
+  --header-backdrop-blur: 18px;
+
+  /* Brand mark */
+  --brand-mark-size: 2.6rem;
+  --brand-mark-font-size: 1.25rem;
+  --brand-mark-font-weight: 800;
+  --brand-copy-strong-font-size: 1.05rem;
+  --brand-copy-strong-letter-spacing: 0.06em;
+  --brand-copy-small-font-size: 0.72rem;
+  --brand-copy-small-letter-spacing: 0.04em;
+
+  /* ============================================
+     11. TYPOGRAPHY SCALE
+     ============================================ */
+  --font-size-hero-lead: clamp(1.08rem, 1.7vw, 1.28rem);
+  --font-size-display: clamp(3rem, 6.2vw, 6.4rem);
+  --font-size-page-title: clamp(2.35rem, 4.5vw, 4.6rem);
+  --font-size-card-heading: clamp(1.7rem, 2.8vw, 2.6rem);
+  --font-size-h3: 1.2rem;
+  --font-size-section-intro: 1.08rem;
+  --font-size-body-default: 1rem;
+  --font-size-body-sm: 0.9rem;
+  --font-size-eyebrow: 0.76rem;
+  --font-size-small: 0.84rem;
+  --font-size-caption: 0.88rem;
+  --font-size-label: 0.76rem;
+  --font-size-button-label: 1.18rem;
+  --font-size-button-label-small: 0.9rem;
+  --font-size-trust-grid: 0.87rem;
+  --font-size-quote: 1.55rem;
+
+  /* ============================================
+     12. LETTER SPACING
+     ============================================ */
+  --letter-spacing-display: -0.055em;
+  --letter-spacing-page-title: -0.045em;
+  --letter-spacing-eyebrow: 0.16em;
+  --letter-spacing-label: 0.14em;
+  --letter-spacing-hero-statement: 0.13em;
+  --letter-spacing-brand-small: 0.04em;
+
+  /* ============================================
+     13. BUTTON & INTERACTIVE
+     ============================================ */
+  --button-min-height: 3.2rem;
+  --button-min-height-small: 2.75rem;
+  --button-padding-y: 0.8rem;
+  --button-padding-x: 1.25rem;
+  --button-padding-y-small: 0.65rem;
+  --button-padding-x-small: 1rem;
+  --button-border-radius: 999px;
+  --button-transform-hover: translateY(-2px);
+  --button-font-weight: 800;
+  --button-gap: 0.9rem;
+
+  /* ============================================
+     14. CARD & CONTENT
+     ============================================ */
+  --card-padding: 2rem;
+  --card-padding-responsive: clamp(2rem, 4vw, 3.5rem);
+  --card-border-radius: var(--radius-lg);
+  --card-shadow: var(--shadow-sm);
+  --card-gap: 1.2rem;
+
+  /* ============================================
+     15. LIST & TEXT
+     ============================================ */
+  --check-list-gap: 0.8rem;
+  --check-list-padding-left: 1.8rem;
+  --check-list-color: var(--teal-700);
+  --topic-list-grid-cols: 3rem 1fr auto;
+  --topic-list-gap: 1rem;
+  --topic-list-padding: 1.25rem 0;
+  --text-link-gap: 0.5rem;
+  --text-link-underline-thickness: 1px;
+  --text-link-underline-offset: 0.28rem;
+
+  /* ============================================
+     16. GRID LAYOUTS
+     ============================================ */
+  --grid-columns-default-2: repeat(2, 1fr);
+  --grid-columns-default-3: repeat(3, 1fr);
+  --grid-columns-default-4: repeat(4, 1fr);
+  --grid-gap-cards: 1.4rem;
+  --grid-gap-content: 1.2rem;
+  --grid-gap-flex: 0.5rem;
+
+  /* ============================================
+     17. DECORATIVE & ILLUSTRATION
+     ============================================ */
+  --orb-blur: 2px;
+  --orb-opacity: 0.18;
+  --network-ring-border: 1px solid rgba(255, 255, 255, 0.35);
+  --network-node-box-shadow: 0 0 0 10px rgba(240, 217, 157, 0.12);
+  --portrait-card-border-radius: 12rem 12rem 1.5rem 1.5rem;
+  --portrait-card-figcaption-backdrop-blur: 10px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
 }
