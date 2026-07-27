@@ -1,0 +1,12 @@
+:root {
+  --font-size-base: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+}
+
+html { font-size: var(--font-size-base); }
+
+h1 { font-size: 2rem; margin: 0 0 0.5rem 0; }
+h2 { font-size: 1.25rem; margin: 1rem 0 0.5rem 0; }
+p { margin: 0 0 1rem 0; }
+.lead { font-size: 1.125rem; color: var(--color-text-muted); }

@@ -1,0 +1,6 @@
+---
+const { size = "md" } = Astro.props;
+const allowed = { sm: "container--sm", md: "container--md", lg: "container--lg", xl: "container--xl" };
+const cls = allowed[size] ?? allowed.md;
+---
+<div class={cls}><slot /></div>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/ui/Button.astro";
+import Card from "../components/ui/Card.astro";
+import Badge from "../components/ui/Badge.astro";
+import SectionHeader from "../components/ui/SectionHeader.astro";
+import Container from "../components/ui/Container.astro";
+---
+<BaseLayout>
+  <Container size="md">
+    <h1>Style guide</h1>
+
+    <SectionHeader title="Buttons" subtitle="Primary and secondary buttons" />
+    <div class="flex gap-4 items-center">
+      <Button variant="primary">Primary</Button>
+      <Button variant="secondary">Secondary</Button>
+    </div>
+
+    <SectionHeader title="Cards" />
+    <Card>
+      <h3>Card title</h3>
+      <p>Card body copy demonstrating typography and spacing.</p>
+    </Card>
+
+    <SectionHeader title="Badges" />
+    <div class="flex gap-2 items-center mt-2">
+      <Badge>Neutral</Badge>
+      <Badge tone="neutral">Neutral 2</Badge>
+    </div>
+
+    <SectionHeader title="Container widths" />
+    <p>Current container max-width (md) is token-driven: <code>--container-md</code></p>
+  </Container>
+</BaseLayout>

@@ -1,0 +1,54 @@
+/* Buttons */
+.btn {
+  padding: calc(var(--space-2)) calc(var(--space-3));
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.btn--primary {
+  background: var(--color-brand-primary);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.btn--secondary {
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+/* Card */
+.card {
+  border: 1px solid var(--color-border);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Badge */
+.badge {
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  display:inline-block;
+}
+.badge--neutral { background: #eef2ff; color: var(--color-text); }
+
+/* Section header */
+.section-header { margin-bottom: var(--space-3); }
+.section-header .muted { color: var(--color-text-muted); margin-top: calc(var(--space-1)); }
+
+/* Container sizes mapped to tokens */
+.container--sm { max-width: var(--container-sm); margin: 0 auto; padding: 0 var(--space-3); }
+.container--md { max-width: var(--container-md); margin: 0 auto; padding: 0 var(--space-3); }
+.container--lg { max-width: var(--container-lg); margin: 0 auto; padding: 0 var(--space-3); }
+.container--xl { max-width: var(--container-xl); margin: 0 auto; padding: 0 var(--space-3); }
+
+/* Header / Nav / Footer minimal */
+.header { display:flex; align-items:center; justify-content:space-between; gap: var(--space-3); }
+.footer { border-top: 1px solid var(--color-border); padding-top: var(--space-3); }

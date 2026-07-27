@@ -1,0 +1,14 @@
+/* Improved focus styles for keyboard users */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 3px solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Make sure reduced-motion is respected here as well */
+@media (prefers-reduced-motion: reduce) {
+  :focus-visible { transition: none !important; }
+}
