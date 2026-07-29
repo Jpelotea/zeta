@@ -1,0 +1,636 @@
+---
+import SectionHeading from '../components/SectionHeading.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const colorGroups = [
+  {
+    title: 'Backgrounds',
+    description: 'Canvas, surface, and branded fields establish visual hierarchy.',
+    tokens: [
+      ['Background', '--color-background'],
+      ['Subtle', '--color-background-subtle'],
+      ['Muted', '--color-background-muted'],
+      ['Strong', '--color-background-strong'],
+      ['Strongest', '--color-background-strongest'],
+      ['Brand', '--color-background-brand'],
+      ['Accent', '--color-background-accent']
+    ]
+  },
+  {
+    title: 'Text',
+    description: 'Semantic text roles maintain contrast across light and dark surfaces.',
+    tokens: [
+      ['Default', '--color-text'],
+      ['Muted', '--color-text-muted'],
+      ['Subtle', '--color-text-subtle'],
+      ['Heading', '--color-text-heading'],
+      ['Inverse', '--color-text-inverse'],
+      ['Inverse muted', '--color-text-inverse-muted'],
+      ['Accent', '--color-text-accent']
+    ]
+  },
+  {
+    title: 'Interaction',
+    description: 'Action, border, focus, and selection colors communicate state.',
+    tokens: [
+      ['Interactive', '--color-interactive'],
+      ['Hover', '--color-interactive-hover'],
+      ['Secondary', '--color-interactive-secondary'],
+      ['Border', '--color-border'],
+      ['Strong border', '--color-border-strong'],
+      ['Focus', '--color-focus'],
+      ['Selection', '--color-selection']
+    ]
+  }
+];
+
+const spacingTokens = [
+  ['2XS', '--space-2xl'],
+  ['XS', '--space-4xl'],
+  ['S', '--space-6xl'],
+  ['M', '--space-8xl'],
+  ['L', '--space-11xl'],
+  ['XL', '--space-15xl'],
+  ['2XL', '--space-19xl'],
+  ['3XL', '--space-21xl'],
+  ['4XL', '--space-24xl']
+];
+
+const typeSpecimens = [
+  ['Hero display', '--font-size-display-hero', 'A Community That Builds Leaders'],
+  ['Section display', '--font-size-display', 'Builder of Builders'],
+  ['Card display', '--font-size-display-sm', 'Professional growth through practice'],
+  ['Lead', '--font-size-lead', 'A clear introduction supports confident, responsible decisions.'],
+  ['Body', '--font-size-body-base', 'Zeta uses disciplined typography to make detailed information calm and readable.'],
+  ['Label', '--font-size-xs', 'LEADERSHIP DEVELOPMENT']
+];
+
+const elevationTokens = [
+  ['Small elevation', '--shadow-sm'],
+  ['Large elevation', '--shadow-lg'],
+  ['Primary action', '--shadow-button']
+];
+---
+
+<BaseLayout title="Style Guide | Zeta" description="The living design system for Zeta's visual language, semantic tokens, and reusable interface components.">
+  <section class="page-hero style-guide-hero">
+    <div class="shell style-guide-hero-grid">
+      <div>
+        <p class="eyebrow eyebrow-light">Milestone 1.2 · Living System</p>
+        <h1>One Visual Language, Built for Responsible Growth</h1>
+        <p>This guide documents the semantic decisions behind Zeta’s interface and renders the same reusable classes used throughout the production site.</p>
+      </div>
+      <dl class="guide-status" aria-label="Design system status">
+        <div><dt>Foundation</dt><dd>Semantic tokens</dd></div>
+        <div><dt>Coverage</dt><dd>Five stylesheets</dd></div>
+        <div><dt>Mode</dt><dd>Light + inverse surfaces</dd></div>
+        <div><dt>Standard</dt><dd>WCAG-aware states</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="shell guide-layout">
+    <aside class="guide-nav" aria-label="Style guide sections">
+      <p class="card-kicker">Contents</p>
+      <nav>
+        <a href="#principles">Principles</a>
+        <a href="#color">Color</a>
+        <a href="#typography">Typography</a>
+        <a href="#spacing">Spacing</a>
+        <a href="#shape">Shape & elevation</a>
+        <a href="#actions">Actions</a>
+        <a href="#content">Content components</a>
+        <a href="#forms">Forms</a>
+      </nav>
+    </aside>
+
+    <div class="guide-content">
+      <section class="guide-section" id="principles">
+        <SectionHeading eyebrow="Foundations" title="Design Principles" text="The system favors clarity, earned emphasis, and purposeful restraint over decoration for its own sake." />
+        <div class="principle-ledger">
+          <article><span>01</span><h3>Trust before spectacle</h3><p>Hierarchy, contrast, and plain language make important details easy to verify.</p></article>
+          <article><span>02</span><h3>Warmth with discipline</h3><p>Ivory surfaces and gold accents soften a structured navy foundation.</p></article>
+          <article><span>03</span><h3>Components stay contextual</h3><p>The same patterns adapt across editorial, recruitment, education, and leadership content.</p></article>
+        </div>
+      </section>
+
+      <section class="guide-section" id="color">
+        <SectionHeading eyebrow="Tokens 01" title="Semantic Color" text="Use roles instead of palette names so themes and contrast decisions can evolve without rewriting components." />
+        <div class="color-groups">
+          {colorGroups.map((group) => (
+            <article class="token-group">
+              <div class="token-group-heading"><h3>{group.title}</h3><p>{group.description}</p></div>
+              <div class="swatch-list">
+                {group.tokens.map(([label, token]) => (
+                  <div class="swatch-item">
+                    <span class="swatch" style={`--swatch-color: var(${token})`} aria-hidden="true"></span>
+                    <span><strong>{label}</strong><code>{token}</code></span>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="guide-section" id="typography">
+        <SectionHeading eyebrow="Tokens 02" title="Typography" text="A practical sans-serif body face pairs with a restrained editorial serif for quotations and human stories." />
+        <div class="type-stack">
+          {typeSpecimens.map(([label, token, sample], index) => (
+            <article class:list={['type-specimen', index === typeSpecimens.length - 1 && 'type-specimen-label']}>
+              <div><strong>{label}</strong><code>{token}</code></div>
+              <p style={`--specimen-size: var(${token})`}>{sample}</p>
+            </article>
+          ))}
+        </div>
+        <div class="quote-specimen">
+          <p class="card-kicker">Display family</p>
+          <blockquote>“Leadership becomes visible in the people who grow around it.”</blockquote>
+          <code>--font-family-display</code>
+        </div>
+      </section>
+
+      <section class="guide-section" id="spacing">
+        <SectionHeading eyebrow="Tokens 03" title="Spacing & Rhythm" text="A dense foundational scale supports controls and cards, while fluid section tokens manage page-level pacing." />
+        <div class="spacing-scale">
+          {spacingTokens.map(([label, token]) => (
+            <div class="spacing-item">
+              <span><strong>{label}</strong><code>{token}</code></span>
+              <i style={`--spacing-width: var(${token})`} aria-hidden="true"></i>
+            </div>
+          ))}
+        </div>
+        <div class="fluid-token-row">
+          <div><strong>Section</strong><code>--space-section</code></div>
+          <div><strong>Hero</strong><code>--space-section-hero</code></div>
+          <div><strong>Layout gap</strong><code>--space-layout-gap</code></div>
+        </div>
+      </section>
+
+      <section class="guide-section" id="shape">
+        <SectionHeading eyebrow="Tokens 04" title="Shape & Elevation" text="Rounded geometry is generous on content surfaces and fully circular only for marks, nodes, and pill controls." />
+        <div class="shape-grid">
+          <div class="shape-sample shape-small"><span>Small</span><code>--radius-sm</code></div>
+          <div class="shape-sample shape-medium"><span>Medium</span><code>--radius-md</code></div>
+          <div class="shape-sample shape-large"><span>Large</span><code>--radius-lg</code></div>
+          <div class="shape-sample shape-pill"><span>Pill</span><code>--radius-pill</code></div>
+        </div>
+        <div class="elevation-row">
+          {elevationTokens.map(([label, token]) => (
+            <div class="elevation-sample" style={`--sample-shadow: var(${token})`}><strong>{label}</strong><code>{token}</code></div>
+          ))}
+        </div>
+      </section>
+
+      <section class="guide-section" id="actions">
+        <SectionHeading eyebrow="Components 01" title="Actions & Links" text="Primary actions are calm and authoritative. Accent actions are reserved for major conversion points on dark surfaces." />
+        <div class="component-stage">
+          <div class="component-stage-light">
+            <p class="component-label">Light surface</p>
+            <div class="button-row">
+              <a class="button button-primary" href="#actions">Primary action</a>
+              <a class="button button-secondary" href="#actions">Secondary action</a>
+              <a class="text-link" href="#actions">Editorial text link →</a>
+            </div>
+          </div>
+          <div class="component-stage-dark">
+            <p class="component-label">Inverse surface</p>
+            <div class="button-row">
+              <a class="button button-accent" href="#actions">Accent action</a>
+              <a class="button button-ghost" href="#actions">Ghost action</a>
+              <a class="text-link text-link-light" href="#actions">Inverse text link →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-section" id="content">
+        <SectionHeading eyebrow="Components 02" title="Content Components" text="Cards distinguish pathways, evidence, testimonials, and supporting notes without introducing new visual languages." />
+        <div class="component-mosaic">
+          <article class="career-card career-card-light">
+            <p class="card-kicker">Pathway 01</p><h3>Financial Advisor Development</h3><p>A light card supports detailed descriptions and scannable requirements.</p>
+            <a class="text-link" href="#content">Review the pathway →</a>
+          </article>
+          <article class="info-panel info-panel-dark">
+            <p class="card-kicker eyebrow-light">Readiness</p><h3>Leadership is demonstrated</h3><p>Inverse panels create measured emphasis for standards, responsibilities, and important context.</p>
+          </article>
+          <figure class="testimonial-card testimonial-featured">
+            <blockquote>“The strongest systems make room for people to become capable.”</blockquote>
+            <figcaption><strong>Approved story pattern</strong><span>Role and context appear here</span></figcaption>
+          </figure>
+          <div class="component-notes">
+            <p class="verification-note"><strong>Verification note:</strong> Use this treatment for claims, dates, or details that require approval before publication.</p>
+            <ul class="check-list"><li>Clear, specific language</li><li>Visible evidence requirements</li><li>No implied guarantees</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-section" id="forms">
+        <SectionHeading eyebrow="Components 03" title="Form Controls" text="Controls use visible labels, concise help text, semantic focus styling, and touch-friendly dimensions." />
+        <form class="application-form guide-form" action="#forms">
+          <fieldset>
+            <legend>Example inquiry</legend>
+            <div class="form-grid">
+              <label>Full name <input type="text" name="guide-name" value="Mara Villanueva" /></label>
+              <label>Area of interest <select name="guide-interest"><option>Leadership development</option><option>Financial education</option></select></label>
+            </div>
+            <label>Message <span class="field-help">Describe the context and the information you need.</span><textarea name="guide-message" rows="4">I would like to understand the development pathway and expected next steps.</textarea></label>
+            <label class="checkbox-label"><input type="checkbox" checked /><span>I understand this example demonstrates control styling only.</span></label>
+            <div><button class="button button-primary" type="button">Send inquiry</button></div>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .style-guide-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+    gap: var(--space-layout-gap);
+    align-items: end;
+  }
+
+  .style-guide-hero h1 {
+    max-width: 13ch;
+  }
+
+  .guide-status {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+    border-top: 1px solid var(--color-border-inverse-art);
+    border-left: 1px solid var(--color-border-inverse-art);
+  }
+
+  .guide-status div {
+    padding: var(--space-11xl);
+    border-right: 1px solid var(--color-border-inverse-art);
+    border-bottom: 1px solid var(--color-border-inverse-art);
+  }
+
+  .guide-status dt {
+    color: var(--color-text-accent);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-black);
+    letter-spacing: var(--letter-spacing-kicker);
+    text-transform: uppercase;
+  }
+
+  .guide-status dd {
+    margin: var(--space-xs) 0 0;
+    color: var(--color-text-inverse);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .guide-layout {
+    display: grid;
+    grid-template-columns: 13rem minmax(0, 1fr);
+    gap: var(--space-layout-gap);
+    align-items: start;
+  }
+
+  .guide-nav {
+    position: sticky;
+    top: calc(var(--height-header) + var(--space-19xl));
+    padding-block: var(--space-24xl);
+  }
+
+  .guide-nav nav {
+    display: grid;
+    margin-top: var(--space-8xl);
+    border-top: 1px solid var(--color-border-strong);
+  }
+
+  .guide-nav a {
+    padding: var(--space-6xl) 0;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .guide-nav a:hover {
+    color: var(--color-interactive-secondary);
+  }
+
+  .guide-content {
+    min-width: 0;
+  }
+
+  .guide-section {
+    padding-block: var(--space-section);
+    border-bottom: 1px solid var(--color-border);
+    scroll-margin-top: calc(var(--height-header) + var(--space-19xl));
+  }
+
+  .principle-ledger,
+  .color-groups,
+  .type-stack,
+  .spacing-scale {
+    margin-top: var(--space-22xl);
+    border-top: 1px solid var(--color-border-strong);
+  }
+
+  .principle-ledger article {
+    display: grid;
+    grid-template-columns: 3rem minmax(12rem, 0.75fr) minmax(0, 1fr);
+    gap: var(--space-8xl);
+    padding-block: var(--space-16xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .principle-ledger span,
+  .component-label {
+    color: var(--color-interactive-secondary);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-black);
+    letter-spacing: var(--letter-spacing-kicker);
+    text-transform: uppercase;
+  }
+
+  .principle-ledger h3,
+  .principle-ledger p,
+  .token-group h3,
+  .token-group p {
+    margin: 0;
+  }
+
+  .principle-ledger p,
+  .token-group p {
+    color: var(--color-text-muted);
+  }
+
+  .token-group {
+    display: grid;
+    grid-template-columns: minmax(12rem, 0.55fr) minmax(0, 1.45fr);
+    gap: var(--space-19xl);
+    padding-block: var(--space-19xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .token-group-heading p {
+    margin-top: var(--space-2xl);
+  }
+
+  .swatch-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-8xl);
+  }
+
+  .swatch-item {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: var(--space-6xl);
+    align-items: center;
+  }
+
+  .swatch {
+    width: 3rem;
+    aspect-ratio: 1;
+    background: var(--swatch-color);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .swatch-item strong,
+  .swatch-item code,
+  .type-specimen strong,
+  .type-specimen code,
+  .spacing-item strong,
+  .spacing-item code,
+  .shape-sample span,
+  .shape-sample code,
+  .elevation-sample strong,
+  .elevation-sample code,
+  .fluid-token-row strong,
+  .fluid-token-row code {
+    display: block;
+  }
+
+  code {
+    color: var(--color-text-subtle);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-md);
+  }
+
+  .type-specimen {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: var(--space-19xl);
+    align-items: baseline;
+    padding-block: var(--space-19xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .type-specimen p {
+    margin: 0;
+    color: var(--color-text-heading);
+    font-size: var(--specimen-size);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-heading);
+  }
+
+  .type-specimen-label p {
+    color: var(--color-interactive-secondary);
+    font-weight: var(--font-weight-black);
+    letter-spacing: var(--letter-spacing-label);
+  }
+
+  .quote-specimen {
+    padding: var(--space-24xl);
+    margin-top: var(--space-19xl);
+    color: var(--color-text-inverse);
+    background: var(--gradient-philosophy);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .quote-specimen blockquote {
+    max-width: 22ch;
+    margin: var(--space-8xl) 0 var(--space-19xl);
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-display-sm);
+    line-height: var(--line-height-quote);
+  }
+
+  .quote-specimen code {
+    color: var(--color-text-inverse-muted);
+  }
+
+  .spacing-item {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: var(--space-19xl);
+    align-items: center;
+    min-height: var(--space-24xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .spacing-item i {
+    display: block;
+    width: var(--spacing-width);
+    height: var(--space-6xl);
+    background: var(--color-background-brand);
+    border-radius: var(--radius-pill);
+  }
+
+  .fluid-token-row,
+  .shape-grid,
+  .elevation-row {
+    display: grid;
+    gap: var(--space-8xl);
+    margin-top: var(--space-19xl);
+  }
+
+  .fluid-token-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .fluid-token-row div {
+    padding: var(--space-14xl);
+    background: var(--color-background-subtle);
+    border-left: 4px solid var(--color-focus);
+  }
+
+  .shape-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .shape-sample {
+    display: grid;
+    min-height: 9rem;
+    align-content: end;
+    padding: var(--space-14xl);
+    background: var(--color-background-muted);
+    border: 1px solid var(--color-border);
+  }
+
+  .shape-small { border-radius: var(--radius-sm); }
+  .shape-medium { border-radius: var(--radius-md); }
+  .shape-large { border-radius: var(--radius-lg); }
+  .shape-pill { border-radius: var(--radius-pill); }
+
+  .elevation-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .elevation-sample {
+    padding: var(--space-19xl);
+    background: var(--color-background);
+    border-radius: var(--radius-md);
+    box-shadow: var(--sample-shadow);
+  }
+
+  .component-stage {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: var(--space-22xl);
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .component-stage-light,
+  .component-stage-dark {
+    min-height: 22rem;
+    padding: var(--space-24xl);
+  }
+
+  .component-stage-light {
+    background: var(--color-background-subtle);
+  }
+
+  .component-stage-dark {
+    color: var(--color-text-inverse);
+    background: var(--color-background-strongest);
+  }
+
+  .component-stage-dark .component-label {
+    color: var(--color-text-accent);
+  }
+
+  .component-stage .button-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .component-mosaic {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-14xl);
+    margin-top: var(--space-22xl);
+  }
+
+  .component-mosaic > * {
+    margin: 0;
+  }
+
+  .component-notes {
+    padding: var(--space-19xl);
+    background: var(--color-background-subtle);
+    border-radius: var(--radius-md);
+  }
+
+  .guide-form {
+    margin-top: var(--space-22xl);
+  }
+
+  @media (max-width: 1040px) {
+    .guide-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .guide-nav {
+      position: static;
+      padding: var(--space-19xl) 0 0;
+    }
+
+    .guide-nav nav {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .guide-nav a {
+      padding-right: var(--space-8xl);
+    }
+  }
+
+  @media (max-width: 760px) {
+    .style-guide-hero-grid,
+    .guide-status,
+    .principle-ledger article,
+    .token-group,
+    .swatch-list,
+    .type-specimen,
+    .fluid-token-row,
+    .shape-grid,
+    .elevation-row,
+    .component-stage,
+    .component-mosaic {
+      grid-template-columns: 1fr;
+    }
+
+    .guide-nav nav {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .style-guide-hero h1 {
+      max-width: none;
+    }
+
+    .principle-ledger article,
+    .token-group,
+    .type-specimen {
+      gap: var(--space-8xl);
+    }
+
+    .component-stage-light,
+    .component-stage-dark,
+    .quote-specimen {
+      min-height: auto;
+      padding: var(--space-19xl);
+    }
+  }
+</style>

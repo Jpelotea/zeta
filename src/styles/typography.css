@@ -1,0 +1,184 @@
+h1,
+h2,
+h3,
+p {
+  text-wrap: pretty;
+}
+
+.brand-copy {
+  line-height: var(--line-height-compact);
+}
+
+.brand-copy strong {
+  font-size: 1.05rem;
+  letter-spacing: var(--letter-spacing-brand);
+  text-transform: uppercase;
+}
+
+.brand-copy small {
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-2xs);
+  letter-spacing: var(--letter-spacing-caption);
+}
+
+.primary-nav a:not(.button) {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+}
+
+.button {
+  font-weight: var(--font-weight-strong);
+  line-height: var(--line-height-button);
+}
+
+.button-small {
+  font-size: var(--font-size-body);
+}
+
+.text-link {
+  font-weight: var(--font-weight-extrabold);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28rem;
+}
+
+.hero h1 {
+  font-size: var(--font-size-display-hero);
+  line-height: var(--line-height-tightest);
+  letter-spacing: var(--letter-spacing-display);
+}
+
+.hero-lead {
+  font-size: var(--font-size-hero-lead);
+}
+
+.eyebrow,
+.card-kicker {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-black);
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.card-kicker {
+  letter-spacing: var(--letter-spacing-kicker);
+}
+
+.hero-proof {
+  font-size: var(--font-size-body);
+}
+
+.portrait-card figcaption span,
+.field-help {
+  font-size: var(--font-size-md);
+}
+
+.hero-statement span {
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-black);
+  letter-spacing: var(--letter-spacing-statement);
+  text-transform: uppercase;
+}
+
+.hero-statement strong {
+  font-size: var(--font-size-title-lg);
+  line-height: var(--line-height-compact);
+}
+
+.trust-grid p {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-strong);
+}
+
+.section-heading h2,
+.page-hero h1,
+.final-cta h2 {
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.section-intro {
+  font-size: var(--font-size-body-lg);
+}
+
+.principles-panel span,
+.process-list li::before {
+  font-weight: var(--font-weight-extrabold);
+}
+
+.principles-panel h3 {
+  font-size: var(--font-size-title-md);
+}
+
+.philosophy-section blockquote {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-title-2xl);
+  line-height: var(--line-height-quote);
+}
+
+.check-list li::before {
+  font-weight: var(--font-weight-heaviest);
+}
+
+.career-card h3 {
+  font-size: var(--font-size-display-sm);
+  line-height: var(--line-height-snug);
+}
+
+.leader-card h3 {
+  font-size: var(--font-size-title-xl);
+}
+
+.testimonial-card blockquote {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-title-sm);
+  line-height: var(--line-height-reading);
+}
+
+.testimonial-card figcaption span {
+  font-size: var(--font-size-body-sm);
+}
+
+.page-hero p:not(.eyebrow) {
+  font-size: var(--font-size-lead);
+}
+
+.content-grid h2,
+.article-grid h2 {
+  font-size: var(--font-size-title-2xl);
+  line-height: var(--line-height-button);
+}
+
+.application-form legend {
+  font-size: var(--font-size-title-sm);
+  font-weight: var(--font-weight-black);
+}
+
+.application-form label {
+  font-weight: var(--font-weight-bold);
+}
+
+.field-help {
+  font-weight: var(--font-weight-regular);
+}
+
+.checkbox-label {
+  font-weight: var(--font-weight-medium) !important;
+}
+
+.footer-heading {
+  font-size: 1rem;
+}
+
+.footer-bottom {
+  font-size: var(--font-size-sm);
+}
+
+@media (max-width: 760px) {
+  .hero h1 {
+    font-size: var(--font-size-display-hero-mobile);
+  }
+}
