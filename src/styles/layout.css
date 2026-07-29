@@ -1,0 +1,284 @@
+.shell {
+  width: var(--layout-shell);
+  margin-inline: auto;
+}
+
+.header-inner {
+  display: flex;
+  min-height: var(--height-header);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-15xl);
+}
+
+.primary-nav,
+.primary-nav ul,
+.brand,
+.button,
+.button-row,
+.text-link,
+.hero-proof,
+.centered-actions,
+.heading-row,
+.footer-bottom {
+  display: flex;
+}
+
+.brand,
+.primary-nav,
+.button,
+.text-link {
+  align-items: center;
+}
+
+.brand-copy,
+.application-form,
+.application-form fieldset,
+.application-form label,
+.footer-links,
+.testimonial-card figcaption,
+.process-list {
+  display: grid;
+}
+
+.hero-grid,
+.trust-grid,
+.split-layout,
+.feature-grid,
+.philosophy-grid,
+.achievements-grid,
+.education-grid,
+.form-layout,
+.career-cards,
+.leader-grid,
+.milestone-collage,
+.testimonial-grid,
+.final-cta-inner,
+.content-grid,
+.article-grid,
+.form-grid,
+.footer-grid {
+  display: grid;
+}
+
+.primary-nav,
+.primary-nav ul {
+  gap: var(--space-11xl);
+}
+
+.button-row,
+.centered-actions {
+  flex-wrap: wrap;
+  gap: var(--space-7xl);
+}
+
+.hero-grid {
+  min-height: var(--height-hero);
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.72fr);
+  align-items: center;
+  gap: var(--space-layout-gap);
+  padding-block: var(--space-section-hero);
+}
+
+.hero-copy,
+.hero-visual,
+.hero-statement {
+  position: relative;
+}
+
+.hero-copy,
+.hero-visual {
+  z-index: var(--z-content);
+}
+
+.hero h1 {
+  max-width: var(--layout-hero-copy);
+}
+
+.hero-lead,
+.final-cta p:not(.eyebrow) {
+  max-width: var(--layout-copy-wide);
+}
+
+.hero-visual {
+  min-height: var(--height-hero-visual);
+}
+
+.hero-statement {
+  z-index: var(--z-floating);
+  max-width: var(--layout-statement);
+}
+
+.trust-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+.section-heading {
+  max-width: var(--layout-heading);
+}
+
+.section-heading-center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.split-layout,
+.feature-grid,
+.philosophy-grid,
+.achievements-grid,
+.education-grid,
+.form-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-layout-gap);
+  align-items: start;
+}
+
+.philosophy-grid,
+.feature-grid {
+  align-items: center;
+}
+
+.principles-panel article {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  column-gap: var(--space-8xl);
+}
+
+.principles-panel p {
+  grid-column: 2;
+}
+
+.career-cards {
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-14xl);
+}
+
+.heading-row {
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-19xl);
+}
+
+.leader-grid,
+.testimonial-grid,
+.content-grid,
+.article-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-11xl);
+}
+
+.milestone-collage {
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8xl);
+}
+
+.milestone-large {
+  grid-column: 1 / -1;
+}
+
+.final-cta-inner {
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.6fr);
+  gap: var(--space-19xl);
+  align-items: center;
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.page-hero .shell {
+  padding-block: var(--space-section-hero);
+}
+
+.page-hero-compact .shell {
+  padding-block: var(--space-section-compact);
+}
+
+.form-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8xl);
+}
+
+.footer-grid {
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: var(--space-19xl);
+  padding-block: var(--space-24xl);
+}
+
+.footer-summary {
+  max-width: var(--layout-footer-summary);
+}
+
+.footer-bottom {
+  justify-content: space-between;
+  gap: var(--space-8xl);
+}
+
+@media (max-width: 1040px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: var(--layout-hero-visual);
+    margin-inline: auto;
+  }
+
+  .leader-grid,
+  .testimonial-grid,
+  .content-grid,
+  .article-grid,
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-grid {
+    min-height: auto;
+    padding-block: var(--space-24xl);
+  }
+
+  .hero-visual {
+    min-height: 460px;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split-layout,
+  .feature-grid,
+  .philosophy-grid,
+  .achievements-grid,
+  .education-grid,
+  .form-layout,
+  .final-cta-inner,
+  .career-cards,
+  .leader-grid,
+  .testimonial-grid,
+  .content-grid,
+  .article-grid,
+  .form-grid,
+  .footer-grid,
+  .footer-bottom,
+  .milestone-collage,
+  .heading-row {
+    grid-template-columns: 1fr;
+  }
+
+  .heading-row {
+    display: grid;
+    align-items: start;
+  }
+
+  .footer-bottom {
+    display: grid;
+  }
+
+  .milestone-large {
+    grid-column: auto;
+  }
+}
