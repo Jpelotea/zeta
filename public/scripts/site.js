@@ -11,22 +11,39 @@
   toggle.addEventListener('click', () => {
     const isOpen = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!isOpen));
-    if (isOpen) nav.removeAttribute('data-open');
-    else nav.setAttribute('data-open', 'true');
+    if (isOpen) {
+      nav.removeAttribute('data-open');
+    } else {
+      nav.setAttribute('data-open', 'true');
+    }
   });
 
+  // Intercepts click events on nested spans, svgs, or text nodes inside navigation links
   nav.addEventListener('click', (event) => {
-    if (event.target instanceof HTMLAnchorElement) closeMenu();
+    if (event.target.closest('a')) {
+      closeMenu();
+    }
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
       closeMenu();
       toggle.focus();
     }
   });
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 1040) closeMenu();
-  });
+  // Performance Optimization: Synchronizes logic with the 760px CSS framework breakpoint without event thrashing
+  const desktopBreakpoint = window.matchMedia('(min-width: 761px)');
+  
+  const handleBreakpointChange = (event) => {
+    if (event.matches) {
+      closeMenu();
+    }
+  };
+
+  try {
+    desktopBreakpoint.addEventListener('change', handleBreakpointChange);
+  } catch (error) {
+    desktopBreakpoint.addListener(handleBreakpointChange); // Legacy fallback fallback support
+  }
 })();
