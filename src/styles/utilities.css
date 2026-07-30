@@ -1,18 +1,24 @@
+/* Accessibility Infrastructure */
 .skip-link {
   position: fixed;
   z-index: var(--z-skip-link);
   top: var(--space-8xl);
   left: var(--space-8xl);
   padding: var(--space-5xl) var(--space-8xl);
-  color: var(--color-text-brand);
-  background: var(--color-background);
+  color: var(--color-interactive);
+  background: var(--color-background-subtle);
   border-radius: var(--radius-control);
   box-shadow: var(--shadow-sm);
   transform: translateY(-200%);
+  font-weight: var(--font-weight-strong);
+  text-decoration: none;
+  transition: transform var(--duration-fast) var(--easing-standard), box-shadow var(--duration-fast) var(--easing-standard);
 }
 
 .skip-link:focus {
   transform: translateY(0);
+  outline: none;
+  box-shadow: var(--shadow-focus), var(--shadow-sm);
 }
 
 .sr-only,
@@ -28,26 +34,40 @@
   border: 0 !important;
 }
 
+/* Layout Elements */
 .narrow {
   max-width: var(--layout-narrow);
+  margin-inline: auto;
 }
 
 .prose {
   max-width: var(--layout-prose);
+  margin-inline: auto;
 }
 
 .prose h2 {
   margin-top: var(--space-21xl);
 }
 
+/* Flexbox & Layout Helpers */
 .button-row-end {
+  display: flex;
   justify-content: flex-end;
+  gap: var(--space-md);
 }
 
+/* Text Context Utilities */
 .text-link-light {
   color: var(--color-text-inverse);
+  transition: color var(--duration-fast) var(--easing-standard);
 }
 
+.text-link-light:hover,
+.text-link-light:focus {
+  color: var(--palette-sage-400);
+}
+
+/* Responsive Overrides */
 @media (max-width: 760px) {
   .button-row-end {
     justify-content: flex-start;
