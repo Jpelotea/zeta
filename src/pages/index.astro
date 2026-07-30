@@ -3,64 +3,112 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 
 const leaders = [
-  { name: 'Leadership Profile', title: 'Approved title', focus: 'Mentorship, professional growth, and team development' },
-  { name: 'Leadership Profile', title: 'Approved title', focus: 'Client service, coaching, and professional standards' },
-  { name: 'Leadership Profile', title: 'Approved title', focus: 'Organization building and future-leader development' }
+  {
+    name: 'Shane Villasor Perez',
+    title: 'Branch Head',
+    focus: 'Mentorship, leadership development, and organization building.'
+  },
+  {
+    name: 'Marivien Tan',
+    title: 'Senior Unit Head',
+    focus: 'Organization building and developing future leaders.'
+  },
+  {
+    name: 'Janelyn Pacaonces',
+    title: 'Unit Head',
+    focus: 'Client service, coaching, and professional excellence.'
+  }
 ];
 
 const educationTopics = [
-  'Financial goal setting',
-  'Emergency-fund preparation',
-  'Protection planning',
-  'Retirement preparation',
-  'Financial planning for families',
-  'Financial education for OFWs'
+  'Financial Goal Setting',
+  'Emergency Fund Preparation',
+  'Protection Planning',
+  'Retirement Planning',
+  'Family Financial Planning',
+  'Financial Education for OFWs'
 ];
 ---
 <BaseLayout
-  title="Zeta | Building Careers and Developing Leaders"
-  description="Discover Zeta, a professional financial-services branch and leadership community managed by Branch Manager Shane Perez. Explore career, leadership, mentorship, and financial-education opportunities."
+  title="Zeta | Builder of Builders"
+  description="Zeta is a professional financial services branch and leadership community dedicated to developing professionals through mentorship, financial education, and leadership development."
 >
   <section class="hero">
-    <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
-    <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
-    <div class="shell hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow eyebrow-light">Zeta Leadership Community</p>
-        <h1>Building Careers. Developing Leaders. Creating Leaders Who Build Others.</h1>
-        <p class="hero-lead">Zeta is a financial-services leadership community built under the management of Branch Manager Shane Perez. Through mentorship, professional development, financial education, and organization building, Zeta helps aspiring professionals grow into Financial Advisors, leaders, and builders of future leaders.</p>
-        <div class="button-row">
-          <a class="button button-accent" href="/careers">Explore Career Opportunities</a>
-          <a class="button button-ghost" href="#discover-zeta">Discover Zeta</a>
-        </div>
-        <ul class="hero-proof" aria-label="Zeta focus areas">
-          <li>Structured development</li>
-          <li>Professional mentorship</li>
-          <li>Leadership pathways</li>
-        </ul>
+  <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+
+  <div class="shell hero-grid">
+
+    <div class="hero-copy">
+
+      <p class="eyebrow eyebrow-light">Builder of Builders</p>
+
+      <h1>
+        Building Careers. Developing Leaders. Creating Leaders Who Build Others.
+      </h1>
+
+      <p class="hero-lead">
+        Zeta is a professional financial-services leadership community led by
+        Branch Head Shane Villasor Perez. Through structured professional
+        development, mentorship, financial education, and leadership
+        opportunities, we help individuals build meaningful careers,
+        strengthen their capabilities, and grow into leaders who create
+        opportunities for others.
+      </p>
+
+      <div class="button-row">
+        <a class="button button-accent" href="/careers">
+          Explore Career Opportunities
+        </a>
+
+        <a class="button button-ghost" href="#discover-zeta">
+          Discover Zeta
+        </a>
       </div>
-      <div class="hero-visual" aria-label="Portrait and team imagery placeholders">
-        <figure class="portrait-card">
-          <img src="/images/shane-placeholder.svg" alt="Placeholder for an approved professional portrait of Branch Manager Shane Perez" width="720" height="900" />
-          <figcaption>
-            <strong>Shane Villasor Perez</strong>
-            <span>Branch Manager · Zeta</span>
-          </figcaption>
-        </figure>
-        <div class="hero-statement">
-          <span>Builder of Builders</span>
-          <strong>Grow. Lead. Build others.</strong>
-        </div>
-      </div>
+
+      <ul class="hero-proof" aria-label="Zeta focus areas">
+        <li>Structured Professional Development</li>
+        <li>Mentorship from Experienced Leaders</li>
+        <li>Leadership Growth Pathways</li>
+      </ul>
+
     </div>
-  </section>
+
+    <div
+      class="hero-visual"
+      aria-label="Portrait and leadership community imagery"
+    >
+
+      <figure class="portrait-card">
+        <img
+          src="/images/shane-placeholder.svg"
+          alt="Professional portrait of Shane Villasor Perez"
+          width="720"
+          height="900"
+        />
+
+        <figcaption>
+          <strong>Shane Villasor Perez</strong>
+          <span>Branch Head • Zeta Leadership Community</span>
+        </figcaption>
+      </figure>
+
+      <div class="hero-statement">
+        <span>Builder of Builders</span>
+        <strong>Grow. Lead. Build Others.</strong>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
   <section class="trust-strip" aria-label="Zeta positioning">
     <div class="shell trust-grid">
-      <p>Professional standards</p>
-      <p>Purposeful leadership</p>
-      <p>Continuous development</p>
-      <p>Community contribution</p>
+      <p>Professional Excellence</p>
+      <p>Purpose-Driven Leadership</p>
+      <p>Continuous Learning & Development</p>
+      <p>Meaningful Community Impact</p>
     </div>
   </section>
 
@@ -70,14 +118,14 @@ const educationTopics = [
         <SectionHeading
           eyebrow="About Zeta"
           title="A Leadership Community Built for Growth"
-          text="Zeta is more than a group of Financial Advisors. It is a professional organization focused on developing people, strengthening leadership capability, supporting financial education, and building a culture where leaders are prepared to develop other leaders."
+          text="Zeta is more than a community of Financial Advisors. It is a professional leadership community dedicated to developing capable professionals, strengthening leadership, advancing financial education, and fostering a culture where people learn, grow, and help others succeed. Through mentorship, continuous learning, and meaningful service, we strive to create lasting value for our people, our clients, and the communities we serve."
         />
         <a class="text-link" href="/about">About Zeta <span aria-hidden="true">→</span></a>
       </div>
       <div class="principles-panel">
-        <article><span>01</span><h3>Develop capable professionals</h3><p>Build practical confidence, disciplined work habits, and a service-centered professional foundation.</p></article>
-        <article><span>02</span><h3>Strengthen leadership</h3><p>Help emerging leaders learn how to mentor, communicate, organize, and guide others responsibly.</p></article>
-        <article><span>03</span><h3>Create lasting contribution</h3><p>Use financial education and community involvement to make growth meaningful beyond individual performance.</p></article>
+        <article><span>01</span><h3>Develop Capable Professionals</h3><p>Build confidence, practical skills, ethical standards, and a strong service-centered professional foundation.</p></article>
+        <article><span>02</span><h3>Strengthen Leadership</h3><p>Develop leaders who mentor others, communicate effectively, and create opportunities through responsible leadership.</p></article>
+        <article><span>03</span><h3>Create Lasting Impact</h3><p>Promote financial education, meaningful service, and leadership that contributes beyond individual success.</p></article>
       </div>
     </div>
   </section>
@@ -95,10 +143,10 @@ const educationTopics = [
       <div>
         <SectionHeading
           eyebrow="Leadership Philosophy"
-          title="The Builder of Builders Philosophy"
-          text="Zeta’s objective is not limited to recruiting individuals or building production. Its broader purpose is to develop professionals who can lead, mentor, build teams, and eventually create opportunities for others."
+          title="Building Leaders Who Build Others"
+          text="At Zeta, leadership is measured not only by personal achievement but by the ability to develop others. Through mentorship, continuous learning, and shared responsibility, we cultivate leaders who strengthen teams, inspire growth, and create opportunities for future generations."
         />
-        <blockquote>“Leadership becomes more valuable when it creates more leaders.”</blockquote>
+        <blockquote>“Leadership becomes most meaningful when it creates more leaders.”</blockquote>
         <a class="button button-primary" href="/philosophy">Explore the Philosophy</a>
       </div>
     </div>
@@ -112,13 +160,13 @@ const educationTopics = [
       <div class="feature-copy">
         <SectionHeading
           eyebrow="Leadership"
-          title="Led by Shane Villasor Perez"
-          text="Shane Perez serves as Zeta’s central public-facing branch leader. Her journey from professional development in financial services to branch management provides the foundation for Zeta’s mentorship, standards, and long-term organization-building direction."
+          title="Meet Shane Villasor Perez"
+          text="Shane Villasor Perez serves as Branch Head of Manulife Philippines and leads the Zeta Leadership Community with a commitment to developing professionals, mentoring future leaders, and building organizations grounded in integrity, service, and continuous growth. Her leadership reflects years of practical experience, purposeful mentorship, and a vision of helping others become capable leaders themselves."
         />
         <ul class="check-list">
-          <li>Professional growth grounded in practical experience</li>
-          <li>Mentorship focused on capability and accountability</li>
-          <li>Leadership development designed to multiply opportunity</li>
+          <li>Professional Growth Through Practical Experience</li>
+          <li>Mentorship That Develops Capability and Accountability</li>
+          <li>Leadership That Creates Opportunities for Others</li>
         </ul>
         <a class="text-link" href="/leadership">Read Shane’s Leadership Journey <span aria-hidden="true">→</span></a>
       </div>
@@ -129,145 +177,260 @@ const educationTopics = [
     <div class="shell">
       <SectionHeading
         eyebrow="Career Opportunities"
-        title="Build a Professional Path With Purpose"
-        text="Zeta welcomes people who are ready to learn, serve, grow, and take responsibility for their professional development. Explore the pathway that best reflects where you are today and where you want to go next."
+        title="Build a Career with Purpose"
+        text="Whether you're beginning your career, making a career transition, or preparing for leadership responsibilities, Zeta provides structured development pathways that combine mentorship, practical experience, financial education, and continuous learning. Explore the pathway that best matches your aspirations and take the next step toward meaningful professional growth."
         align="center"
       />
       <div class="career-cards">
         <article class="career-card career-card-light">
           <p class="card-kicker">Pathway 01</p>
           <h3>Financial Advisor Development</h3>
-          <p>For aspiring professionals, career shifters, and experienced client-facing people seeking structured training, mentorship, meaningful client work, and performance-based growth.</p>
+          <p>Designed for aspiring professionals, career shifters, and experienced client-facing individuals, this pathway provides a structured environment to develop essential skills through comprehensive training, mentorship, practical client engagement, and continuous professional development.</p>
           <ul>
-            <li>Professional orientation and development</li>
-            <li>Mentorship and practical learning</li>
-            <li>Financial education and client-service foundations</li>
+            <li>Professional Orientation & Career Development</li>
+            <li>Mentorship & Practical Learning</li>
+            <li>Financial Education & Client Service Foundations</li>
           </ul>
-          <a class="text-link" href="/careers#financial-advisor">Explore this pathway <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="/careers#financial-advisor">Explore This Path <span aria-hidden="true">→</span></a>
         </article>
         <article class="career-card career-card-dark">
           <p class="card-kicker">Pathway 02</p>
           <h3>Leadership and Organization Building</h3>
-          <p>For professionals with the ambition and readiness to mentor others, develop teams, strengthen systems, and help build a sustainable leadership community.</p>
+          <p>Designed for professionals who aspire to mentor others, strengthen teams, develop future leaders, and contribute to the long-term growth of a sustainable leadership community.</p>
           <ul>
-            <li>Leadership capability development</li>
-            <li>Mentoring and team-building exposure</li>
-            <li>Long-term organization-building direction</li>
+            <li>Leadership Development Opportunities</li>
+            <li>Mentorship & Team-Building Experiences</li>
+            <li>Contributing to Long-Term Organizational Growth</li>
           </ul>
-          <a class="text-link text-link-light" href="/careers#leadership-pathway">Explore this pathway <span aria-hidden="true">→</span></a>
+          <a class="text-link text-link-light" href="/careers#leadership-pathway">Explore This Path <span aria-hidden="true">→</span></a>
         </article>
       </div>
       <div class="centered-actions">
-        <a class="button button-primary" href="/careers">Explore Career Opportunities</a>
+        <a class="button button-primary" href="/careers"> Learn More</a>
         <a class="button button-secondary" href="/careers/apply">Be One of Us</a>
       </div>
     </div>
   </section>
 
-  <section class="section community-section">
-    <div class="shell">
-      <div class="heading-row">
-        <SectionHeading
-          eyebrow="Leadership Community"
-          title="Meet the People Helping Zeta Grow"
-          text="Approved profiles can demonstrate how professionals develop through mentorship, performance, collaboration, and increasing leadership responsibility."
-        />
-        <a class="text-link" href="/leadership">Meet the Leadership Community <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="leader-grid">
-        {leaders.map((leader, index) => (
-          <article class="leader-card">
-            <img src={`/images/leader-placeholder-${index + 1}.svg`} alt="Placeholder for an approved Zeta leadership profile photograph" width="640" height="760" loading="lazy" />
-            <div class="leader-card-copy">
-              <p class="card-kicker">{leader.title}</p>
-              <h3>{leader.name}</h3>
-              <p>{leader.focus}</p>
-              <a class="text-link" href="/leadership">View profile <span aria-hidden="true">→</span></a>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section achievements-section">
-    <div class="shell achievements-grid">
-      <div>
-        <SectionHeading
-          eyebrow="Milestones"
-          title="Achievements That Reflect Professional Growth"
-          text="Zeta’s event participation, professional recognition, team promotions, and branch milestones should be presented as a verified record of learning, contribution, and organizational progress."
-        />
-        <p class="verification-note"><strong>Publication standard:</strong> only verified achievements, approved photographs, and accurately described recognitions will appear on the live website.</p>
-        <a class="button button-primary" href="/achievements">View Events and Achievements</a>
-      </div>
-      <div class="milestone-collage" aria-label="Achievement image placeholders">
-        <img class="milestone-large" src="/images/event-placeholder-1.svg" alt="Placeholder for an approved professional convention or leadership-event photograph" width="780" height="620" loading="lazy" />
-        <img src="/images/event-placeholder-2.svg" alt="Placeholder for an approved team milestone photograph" width="480" height="360" loading="lazy" />
-        <img src="/images/event-placeholder-3.svg" alt="Placeholder for an approved recognition or professional activity photograph" width="480" height="360" loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <section class="section stories-section">
-    <div class="shell">
+<section class="section community-section">
+  <div class="shell">
+    <div class="heading-row">
       <SectionHeading
-        eyebrow="Success Stories"
-        title="Growth Is Best Understood Through People"
-        text="Approved testimonials can show how mentorship, structure, professional standards, and community helped individuals move forward—without promising identical results to every candidate."
-        align="center"
+        eyebrow="Leadership Community"
+        title="Meet the Leaders Behind Zeta"
+        text="Discover the professionals whose leadership journeys reflect Zeta's commitment to mentorship, continuous development, and purposeful leadership. Together, they cultivate a collaborative community where leaders grow by helping others grow."
       />
-      <div class="testimonial-grid">
-        <figure class="testimonial-card">
-          <blockquote>“Approved testimonial copy will appear here after the contributor confirms the wording and grants permission for publication.”</blockquote>
-          <figcaption><strong>Approved contributor</strong><span>Verified role or relationship</span></figcaption>
-        </figure>
-        <figure class="testimonial-card testimonial-featured">
-          <blockquote>“The strongest stories should describe the person’s starting point, the support they received, the work they completed, and the progress they can verify.”</blockquote>
-          <figcaption><strong>Editorial standard</strong><span>Zeta success-story framework</span></figcaption>
-        </figure>
-        <figure class="testimonial-card">
-          <blockquote>“Client stories should be published only with clear permission and should never disclose private financial information.”</blockquote>
-          <figcaption><strong>Privacy standard</strong><span>Responsible storytelling</span></figcaption>
-        </figure>
-      </div>
-      <div class="centered-actions"><a class="text-link" href="/stories">Read Success Stories <span aria-hidden="true">→</span></a></div>
-    </div>
-  </section>
 
-  <section class="section education-section">
-    <div class="shell education-grid">
-      <div>
-        <SectionHeading
-          eyebrow="Financial Education"
-          title="Practical Learning for Better Financial Conversations"
-          text="Zeta’s educational content will help people understand foundational financial concepts and prepare more thoughtful questions. The information will remain general and educational rather than personalized financial advice."
-        />
-        <a class="button button-secondary" href="/education">Explore Financial Education</a>
-      </div>
-      <div class="topic-list">
-        {educationTopics.map((topic, index) => (
-          <a href="/education">
-            <span>{String(index + 1).padStart(2, '0')}</span>
-            <strong>{topic}</strong>
-            <span aria-hidden="true">↗</span>
-          </a>
-        ))}
-      </div>
+      <a class="text-link" href="/leadership">
+        Explore the Leadership Community
+        <span aria-hidden="true">→</span>
+      </a>
     </div>
-  </section>
 
-  <section class="final-cta">
-    <div class="shell final-cta-inner">
-      <div>
-        <p class="eyebrow eyebrow-light">Your next chapter</p>
-        <h2>Are You Ready to Build Your Next Chapter?</h2>
-        <p>Whether you are exploring a Financial Advisor career, preparing for leadership, seeking professional mentorship, or interested in learning more about Zeta, the next conversation can begin here.</p>
-      </div>
-      <div class="button-row button-row-end">
-        <a class="button button-accent" href="/careers/apply">Be One of Us</a>
-        <a class="button button-ghost" href="/contact">Send an Inquiry</a>
-      </div>
+    <div class="leader-grid">
+      {leaders.map((leader, index) => (
+        <article class="leader-card">
+          <img
+            src={`/images/leader-placeholder-${index + 1}.svg`}
+            alt="Professional portrait placeholder for a Zeta leadership profile"
+            width="640"
+            height="760"
+            loading="lazy"
+          />
+
+          <div class="leader-card-copy">
+            <p class="card-kicker">{leader.title}</p>
+
+            <h3>{leader.name}</h3>
+
+            <p>{leader.focus}</p>
+
+            <a class="text-link" href="/leadership">
+              View Profile
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      ))}
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="section achievements-section">
+  <div class="shell achievements-grid">
+
+    <div>
+
+      <SectionHeading
+        eyebrow="Events & Achievements"
+        title="Celebrating Meaningful Milestones"
+        text="Every milestone reflects Zeta's commitment to professional development, leadership excellence, and continuous growth. From industry events and leadership conferences to team promotions, professional recognitions, and organizational achievements, each accomplishment represents meaningful progress in building capable professionals and future leaders."
+      />
+
+      <a class="button button-primary" href="/achievements">
+        View Events & Achievements
+      </a>
+
+    </div>
+
+    <div
+      class="milestone-collage"
+      aria-label="Professional events and achievements"
+    >
+
+      <img
+        class="milestone-large"
+        src="/images/event-placeholder-1.svg"
+        alt="Placeholder for an approved leadership conference or professional event"
+        width="780"
+        height="620"
+        loading="lazy"
+      />
+
+      <img
+        src="/images/event-placeholder-2.svg"
+        alt="Placeholder for an approved team milestone or leadership activity"
+        width="480"
+        height="360"
+        loading="lazy"
+      />
+
+      <img
+        src="/images/event-placeholder-3.svg"
+        alt="Placeholder for an approved award, recognition, or organizational achievement"
+        width="480"
+        height="360"
+        loading="lazy"
+      />
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section stories-section">
+  <div class="shell">
+
+    <SectionHeading
+      eyebrow="Success Stories"
+      title="Leadership That Makes a Lasting Difference"
+      align="center"
+    >
+      <p class="verification-note">
+        <strong>Important Note:</strong> These testimonials reflect the personal
+        experiences and opinions of the individuals who shared them. Individual
+        journeys, achievements, and outcomes vary based on personal circumstances,
+        effort, and other factors. They should not be interpreted as guarantees or
+        promises of future results.
+      </p>
+    </SectionHeading>
+
+    <div class="testimonial-grid">
+
+      <figure class="testimonial-card">
+        <blockquote>
+          “With your expertise in leadership and your unwavering support for your team, you have created an environment that fosters creativity, growth, and collaboration. Your dedication as the top Branch Head in Manulife Philippines helped me understand the true value of leadership and inspired me to pursue the goal of becoming a Branch Head myself.”
+        </blockquote>
+        <figcaption>
+          <strong>Partner Yon</strong>
+          <span>Branch Unit Head</span>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial-card testimonial-featured">
+        <blockquote>
+          “I met BH Shane in November 2021. She immediately stood out for her humility, kindness, and servant leadership. My transition from one company to another became much easier because of her unwavering guidance and support. Watching her grow from Unit Head to Branch Head, even during the pandemic, has been incredibly inspiring. I remain grateful for her mentorship and for the positive impact she continues to have on our lives.”
+        </blockquote>
+        <figcaption>
+          <strong>Faith Franco Orella Ortega</strong>
+          <span>Branch Unit Head</span>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial-card">
+        <blockquote>
+          “BH Shane leads with a genuine desire to help others succeed. Her leadership is rooted in serving people, supporting families, and creating opportunities for growth. I consider myself fortunate to have worked alongside her—not only as a peer, but also as someone I look up to as a mentor.”
+        </blockquote>
+        <figcaption>
+          <strong>Jerry P. Acido Jr.</strong>
+          <span>Branch Unit Head</span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+    <div class="centered-actions">
+      <a class="text-link" href="/stories">
+        Read More Success Stories
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="section education-section">
+  <div class="shell education-grid">
+
+    <div>
+
+      <SectionHeading
+        eyebrow="Financial Education"
+        title="Practical Learning for Better Financial Conversations"
+        text="Zeta is committed to promoting financial literacy through clear, practical, and accessible educational content. Our resources are designed to help individuals understand fundamental financial concepts, explore planning considerations, and ask more informed questions. All content is provided for general educational purposes only and should not be interpreted as personalized financial, investment, insurance, tax, or legal advice."
+      />
+
+      <a class="button button-secondary" href="/education">
+        Explore Financial Education
+      </a>
+
+    </div>
+
+    <div class="topic-list">
+      {educationTopics.map((topic, index) => (
+        <a href="/education">
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <strong>{topic}</strong>
+          <span aria-hidden="true">↗</span>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="shell final-cta-inner">
+
+    <div>
+
+      <p class="eyebrow eyebrow-light">Your Next Chapter</p>
+
+      <h2>Are You Ready to Build Your Next Chapter?</h2>
+
+      <p>
+        Whether you're exploring a career as a Financial Advisor, preparing
+        for future leadership opportunities, seeking professional mentorship,
+        or interested in learning more about the Zeta Leadership Community,
+        we're here to help you take the next step. Every meaningful journey
+        begins with a conversation—and we'd be glad to start that conversation
+        with you.
+      </p>
+
+    </div>
+
+    <div class="button-row button-row-end">
+
+      <a class="button button-accent" href="/careers/apply">
+        Be One of Us
+      </a>
+
+      <a class="button button-ghost" href="/contact">
+        Send an Inquiry
+      </a>
+
+    </div>
+
+  </div>
+</section>
 </BaseLayout>

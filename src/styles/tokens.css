@@ -1,73 +1,52 @@
 :root {
-  /* Primitive palette */
-  --palette-navy-950: #061a30;
-  --palette-navy-900: #0a2441;
-  --palette-navy-800: #14395d;
-  --palette-teal-700: #0f6668;
-  --palette-teal-600: #14797a;
-  --palette-teal-300: #42b5aa;
-  --palette-gold-500: #d5ad57;
-  --palette-gold-300: #f0d99d;
-  --palette-gold-200: #f8e7b9;
-  --palette-ivory-100: #f7f6f1;
-  --palette-ivory-200: #efede4;
+  /* Primitive Palette — New Brand Specification */
+  --palette-green-700: #00693c;        /* Core Primary (Manulife Green) */
+  --palette-green-600: #00883c;        /* Interface Alternative (Forest Green) */
+  --palette-sage-500: #87a99b;         /* Secondary Anchor (Muted Sage) */
+  --palette-sage-400: #87a89b;         /* Alternate Secondary (Sage Green) */
+  --palette-terracotta-500: #c86d51;   /* Dynamic Accent (Warm Terracotta) */
+  --palette-sandstone-100: #efece6;    /* Base Editorial Canvas (Warm Sandstone) */
+  --palette-alabaster-50: #f9fbf9;     /* High-Contrast Digital Canvas */
+  --palette-espresso-950: #3b2f2f;     /* High-End Typography (Deep Espresso) */
   --palette-white: #ffffff;
-  --palette-ink-900: #14202d;
-  --palette-ink-700: #364756;
-  --palette-ink-500: #61717e;
-  --palette-line: #d8dedf;
-  --palette-input-border: #a9b4bb;
-  --palette-light-blue: #dce7ee;
-  --palette-light-blue-muted: #b9c7d1;
-  --palette-portrait: #dce4e4;
-  --palette-success: #1f6b47;
 
-  /* Semantic color */
-  --color-background: var(--palette-white);
-  --color-background-subtle: var(--palette-ivory-100);
+  /* Semantic Colors */
+  --color-background: var(--palette-sandstone-100);       /* Premium Swiss Canvas */
+  --color-background-subtle: var(--palette-alabaster-50); /* High-contrast zones */
   --color-background-muted: var(--palette-ivory-200);
-  --color-background-strong: var(--palette-navy-900);
-  --color-background-strongest: var(--palette-navy-950);
-  --color-background-brand: var(--palette-teal-700);
-  --color-background-accent: var(--palette-gold-300);
-  --color-background-accent-hover: var(--palette-gold-200);
-  --color-background-image-placeholder: var(--palette-portrait);
-  --color-text: var(--palette-ink-900);
-  --color-text-muted: var(--palette-ink-700);
-  --color-text-subtle: var(--palette-ink-500);
+  --color-background-strong: var(--palette-green-700);    /* Primary green blocks */
+  --color-background-brand: var(--palette-green-700);     /* Main Brand Accent */
+  --color-background-accent: var(--palette-terracotta-500); /* CTA Highlights */
+  
+  --color-text: var(--palette-espresso-950);               /* Softer High-End Text */
+  --color-text-heading: var(--palette-espresso-950);
   --color-text-inverse: var(--palette-white);
-  --color-text-inverse-muted: var(--palette-light-blue);
-  --color-text-inverse-subtle: var(--palette-light-blue-muted);
-  --color-text-brand: var(--palette-navy-900);
-  --color-text-heading: var(--palette-navy-950);
-  --color-text-accent: var(--palette-gold-300);
-  --color-text-success: var(--palette-success);
-  --color-interactive: var(--palette-navy-900);
-  --color-interactive-hover: var(--palette-navy-800);
-  --color-interactive-secondary: var(--palette-teal-700);
-  --color-border: var(--palette-line);
-  --color-border-strong: var(--palette-navy-900);
-  --color-border-input: var(--palette-input-border);
-  --color-focus: var(--palette-gold-500);
-  --color-selection: var(--palette-gold-300);
-  --color-selection-text: var(--palette-navy-950);
+  
+  --color-interactive: var(--palette-green-700);
+  --color-interactive-hover: var(--palette-green-600);
+  --color-interactive-secondary: var(--palette-sage-500);
+  
+  --color-focus: var(--palette-terracotta-500);
+  --color-selection: var(--palette-sage-500);
+  --color-selection-text: var(--palette-white);
 
-  /* Transparent color */
-  --color-header-background: rgb(255 255 255 / 94%);
-  --color-header-border: rgb(10 36 65 / 8%);
-  --color-surface-inverse-soft: rgb(255 255 255 / 4%);
-  --color-surface-inverse-hover: rgb(255 255 255 / 11%);
-  --color-border-inverse: rgb(255 255 255 / 68%);
-  --color-border-inverse-subtle: rgb(255 255 255 / 12%);
-  --color-border-inverse-art: rgb(255 255 255 / 35%);
-  --color-caption-background: rgb(6 26 48 / 86%);
-  --color-accent-wash: rgb(213 173 87 / 10%);
-  --color-node-ring: rgb(240 217 157 / 12%);
-  --color-focus-ring: rgb(15 102 104 / 15%);
+  /* Transparent Colors — Updated to Brand Specifications */
+  --color-header-background: rgba(249, 251, 249, 0.94);  /* Transparent Alabaster Cream */
+  --color-header-border: rgba(59, 47, 47, 0.08);          /* Soft Espresso Border */
+  --color-surface-inverse-soft: rgba(255, 255, 255, 0.04);
+  --color-surface-inverse-hover: rgba(255, 255, 255, 0.11);
+  --color-border-inverse: rgba(255, 255, 255, 0.68);
+  --color-border-inverse-subtle: rgba(255, 255, 255, 0.12);
+  --color-border-inverse-art: rgba(255, 255, 255, 0.35);
+  --color-caption-background: rgba(59, 47, 47, 0.86);     /* Deep Espresso Mask */
+  --color-accent-wash: rgba(200, 109, 81, 0.10);          /* 10% Terracotta Tint */
+  --color-node-ring: rgba(135, 169, 155, 0.12);           /* 12% Sage Tint */
+  --color-focus-ring: rgba(0, 105, 60, 0.15);             /* 15% Brand Green Tint */
 
-  /* Typography */
+  /* Typography Infrastructure */
   --font-family-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-family-display: Iowan Old Style, Baskerville, "Times New Roman", serif;
+  
   --font-size-2xs: 0.72rem;
   --font-size-xs: 0.76rem;
   --font-size-sm: 0.78rem;
@@ -83,11 +62,12 @@
   --font-size-title-lg: 1.25rem;
   --font-size-title-xl: 1.35rem;
   --font-size-title-2xl: 1.55rem;
+  --font-size-hero-lead: clamp(1.08rem, 1.7vw, 1.28rem);
   --font-size-display-sm: clamp(1.7rem, 2.8vw, 2.6rem);
   --font-size-display: clamp(2.35rem, 4.5vw, 4.6rem);
-  --font-size-display-hero: clamp(3rem, 6.2vw, 6.4rem);
   --font-size-display-hero-mobile: clamp(2.85rem, 14vw, 4.8rem);
-  --font-size-hero-lead: clamp(1.08rem, 1.7vw, 1.28rem);
+  --font-size-display-hero: clamp(3rem, 6.2vw, 6.4rem);
+  
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 650;
@@ -96,6 +76,7 @@
   --font-weight-extrabold: 800;
   --font-weight-black: 850;
   --font-weight-heaviest: 900;
+  
   --line-height-tightest: 0.98;
   --line-height-tight: 1.02;
   --line-height-snug: 1.08;
@@ -104,6 +85,7 @@
   --line-height-quote: 1.35;
   --line-height-reading: 1.5;
   --line-height-body: 1.6;
+  
   --letter-spacing-display: -0.055em;
   --letter-spacing-heading: -0.045em;
   --letter-spacing-label: 0.16em;
@@ -112,7 +94,7 @@
   --letter-spacing-brand: 0.06em;
   --letter-spacing-caption: 0.04em;
 
-  /* Spacing */
+  /* Spacing Scale */
   --space-0: 0;
   --space-3xs: 0.2rem;
   --space-2xs: 0.22rem;
@@ -144,13 +126,13 @@
   --space-22xl: 3rem;
   --space-23xl: 3.5rem;
   --space-24xl: 4rem;
-  --space-section: clamp(4.5rem, 8vw, 8rem);
-  --space-section-compact: clamp(4rem, 7vw, 6rem);
-  --space-section-hero: clamp(5rem, 10vw, 8rem);
-  --space-layout-gap: clamp(2rem, 6vw, 6rem);
   --space-card: clamp(2rem, 4vw, 3.5rem);
+  --space-layout-gap: clamp(2rem, 6vw, 6rem);
+  --space-section-compact: clamp(4rem, 7vw, 6rem);
+  --space-section: clamp(4.5rem, 8vw, 8rem);
+  --space-section-hero: clamp(5rem, 10vw, 8rem);
 
-  /* Shape, elevation, and motion */
+  /* Shape, Elevation, and Motion Components */
   --radius-control: 0.4rem;
   --radius-input: 0.6rem;
   --radius-sm: 0.7rem;
@@ -159,12 +141,15 @@
   --radius-pill: 999px;
   --radius-round: 50%;
   --radius-portrait: 12rem 12rem 1.5rem 1.5rem;
-  --shadow-sm: 0 10px 30px rgb(6 26 48 / 8%);
-  --shadow-lg: 0 24px 70px rgb(6 26 48 / 16%);
-  --shadow-button: 0 10px 24px rgb(10 36 65 / 20%);
-  --shadow-button-accent: 0 12px 28px rgb(240 217 157 / 20%);
+  
+  /* Elevation Shadows — Re-anchored to Deep Espresso & Brand Elements */
+  --shadow-sm: 0 10px 30px rgba(59, 47, 47, 0.08);
+  --shadow-lg: 0 24px 70px rgba(59, 47, 47, 0.16);
+  --shadow-button: 0 10px 24px rgba(0, 105, 60, 0.20);
+  --shadow-button-accent: 0 12px 28px rgba(200, 109, 81, 0.20);
   --shadow-focus: 0 0 0 3px var(--color-focus-ring);
   --shadow-node: 0 0 0 10px var(--color-node-ring);
+  
   --duration-fast: 180ms;
   --duration-standard: 200ms;
   --easing-standard: ease;
@@ -172,7 +157,7 @@
   --blur-caption: 10px;
   --blur-art: 2px;
 
-  /* Layout */
+  /* Layout Boundaries */
   --layout-shell-max: 1180px;
   --layout-shell-gutter: 2rem;
   --layout-shell: min(var(--layout-shell-max), calc(100% - var(--layout-shell-gutter)));
@@ -184,6 +169,7 @@
   --layout-footer-summary: 390px;
   --layout-hero-visual: 550px;
   --layout-statement: 220px;
+  
   --height-header: 5rem;
   --height-control: 3.2rem;
   --height-control-small: 2.75rem;
@@ -191,41 +177,85 @@
   --height-hero-visual: 560px;
   --height-art: 480px;
   --height-select: 12rem;
+  
   --z-header: 100;
   --z-skip-link: 999;
   --z-content: 2;
   --z-floating: 3;
 
-  /* Composed visual treatments */
-  --gradient-hero: linear-gradient(130deg, var(--palette-navy-950) 0%, var(--palette-navy-900) 54%, #0a4b59 100%);
-  --gradient-page-hero: linear-gradient(135deg, var(--palette-navy-950), var(--palette-navy-900) 60%, var(--palette-teal-700));
-  --gradient-philosophy: linear-gradient(145deg, var(--palette-navy-900), var(--palette-teal-700));
-  --gradient-careers: linear-gradient(180deg, var(--palette-white), var(--palette-ivory-100));
-  --gradient-cta: linear-gradient(120deg, var(--palette-teal-700), var(--palette-navy-900));
+  /* Composed Visual Gradients — Remapped for Swiss Editorial Tones */
+  --gradient-hero: linear-gradient(130deg, var(--palette-espresso-950) 0%, var(--palette-green-700) 100%);
+  --gradient-page-hero: linear-gradient(135deg, var(--palette-espresso-950), var(--palette-green-700) 60%, var(--palette-sage-500));
+  --gradient-philosophy: linear-gradient(145deg, var(--palette-espresso-950), var(--palette-green-700));
+  --gradient-careers: linear-gradient(180deg, var(--palette-white), var(--palette-sandstone-100));
+  --gradient-cta: linear-gradient(120deg, var(--palette-green-700), var(--palette-espresso-950));
 
-  /* Legacy aliases retained temporarily for downstream compatibility. */
-  --navy-950: var(--palette-navy-950);
-  --navy-900: var(--palette-navy-900);
-  --navy-800: var(--palette-navy-800);
-  --teal-700: var(--palette-teal-700);
-  --teal-600: var(--palette-teal-600);
-  --gold-500: var(--palette-gold-500);
-  --gold-300: var(--palette-gold-300);
-  --ivory-100: var(--palette-ivory-100);
-  --ivory-200: var(--palette-ivory-200);
-  --white: var(--palette-white);
-  --ink-900: var(--palette-ink-900);
-  --ink-700: var(--palette-ink-700);
-  --ink-500: var(--palette-ink-500);
-  --line: var(--palette-line);
-  --success: var(--palette-success);
-  --shell: var(--layout-shell);
-  --font-sans: var(--font-family-body);
-  --font-serif: var(--font-family-display);
+  /* Legacy Backward-Compatibility Aliases */
+  --teal-700: var(--palette-green-700);
+  --teal-600: var(--palette-green-600);
+  --gold-500: var(--palette-terracotta-500);
+  --gold-300: var(--palette-sage-500);
+  --ivory-100: var(--palette-sandstone-100);
+  --ivory-200: var(--palette-alabaster-50);
+  --ink-900: var(--palette-espresso-950);
 }
 
 @media (max-width: 760px) {
   :root {
     --layout-shell-gutter: 1.25rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Semantic Colors — Inverted for Dark Mode Canvas */
+    --color-background: var(--palette-espresso-950);         /* Deep Espresso Canvas */
+    --color-background-subtle: rgba(59, 47, 47, 0.4);        /* Tinted dark surface overlay */
+    --color-background-muted: rgba(59, 47, 47, 0.6);         /* Semi-opaque dark division layout */
+    --color-background-strong: var(--palette-green-700);
+    --color-background-brand: var(--palette-green-600);       /* Vibrant green selection for low-light legibility */
+    --color-background-accent: var(--palette-terracotta-500);
+    
+    --color-text: var(--palette-alabaster-50);                 /* High-Contrast Light Body Text */
+    --color-text-heading: var(--palette-white);
+    --color-text-inverse: var(--palette-espresso-950);
+    
+    --color-interactive: var(--palette-sage-400);             /* Muted Sage for optimized dark surface interactive link visibility */
+    --color-interactive-hover: var(--palette-sage-500);
+    --color-interactive-secondary: var(--palette-green-600);
+    
+    --color-focus: var(--palette-terracotta-500);
+    --color-selection: var(--palette-green-700);
+    --color-selection-text: var(--palette-white);
+
+    /* Transparent Color Tokens — Recalibrated for Dark Contrast */
+    --color-header-background: rgba(59, 47, 47, 0.94);       /* Dark frosted glass header layout */
+    --color-header-border: rgba(249, 251, 249, 0.08);         /* Subtle Alabaster framing edge */
+    --color-caption-background: rgba(249, 251, 249, 0.86);
+    --color-accent-wash: rgba(200, 109, 81, 0.15);
+    --color-node-ring: rgba(135, 169, 155, 0.20);
+    --color-focus-ring: rgba(0, 136, 60, 0.25);
+
+    /* Elevation Shadows — Recalibrated for Deep Ambient Layouts */
+    --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 24px 70px rgba(0, 0, 0, 0.50);
+    --shadow-button: 0 10px 24px rgba(0, 0, 0, 0.40);
+    --shadow-button-accent: 0 12px 28px rgba(0, 0, 0, 0.45);
+
+    /* Composed Visual Gradients — Remapped for Dark Contexts */
+    --gradient-hero: linear-gradient(130deg, rgba(30, 24, 24, 1) 0%, var(--palette-espresso-950) 100%);
+    --gradient-page-hero: linear-gradient(135deg, var(--palette-espresso-950), rgba(0, 105, 60, 0.4) 60%, var(--palette-sage-500));
+    --gradient-philosophy: linear-gradient(145deg, var(--palette-espresso-950), var(--palette-green-700));
+    --gradient-careers: linear-gradient(180deg, var(--palette-espresso-950), rgba(59, 47, 47, 0.5));
+    --gradient-cta: linear-gradient(120deg, var(--palette-green-700), var(--palette-espresso-950));
+
+    /* Legacy Backward-Compatibility Aliases */
+    --teal-700: var(--palette-green-600);
+    --teal-600: var(--palette-green-700);
+    --gold-500: var(--palette-terracotta-500);
+    --gold-300: var(--palette-sage-400);
+    --ivory-100: var(--palette-espresso-950);
+    --ivory-200: rgba(59, 47, 47, 0.4);
+    --ink-900: var(--palette-alabaster-50);
   }
 }

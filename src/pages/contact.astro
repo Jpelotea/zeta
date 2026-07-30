@@ -1,7 +1,178 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Contact Zeta" description="Send a recruitment, leadership, education, or general inquiry to Zeta.">
-  <section class="page-hero page-hero-compact"><div class="shell narrow"><p class="eyebrow eyebrow-light">Contact Zeta</p><h1>Begin the Right Conversation</h1><p>Use this form for recruitment questions, leadership-pathway inquiries, education requests, or general Zeta matters.</p></div></section>
-  <section class="section"><div class="shell form-layout"><aside class="form-aside"><h2>Applying for a career?</h2><p>Use the dedicated application form when you are ready to submit your professional background and be considered for a pathway.</p><a class="button button-secondary" href="/careers/apply">Go to Application</a></aside><form class="application-form" name="zeta-inquiry" method="POST" action="/success" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="zeta-inquiry" /><p class="visually-hidden"><label>Do not fill this out if you are human: <input name="bot-field" /></label></p><fieldset><legend>Your inquiry</legend><label>Full name <input type="text" name="full-name" autocomplete="name" required /></label><label>Email address <input type="email" name="email" autocomplete="email" required /></label><label>Inquiry type <select name="inquiry-type" required><option value="">Select one</option><option>Recruitment question</option><option>Leadership pathway</option><option>Financial education</option><option>Event or community initiative</option><option>General inquiry</option></select></label><label>Message <textarea name="message" rows="7" required></textarea></label><label class="checkbox-label"><input type="checkbox" required name="consent" /> <span>I consent to being contacted about this inquiry and have read the <a href="/privacy">privacy notice</a>.</span></label></fieldset><button class="button button-primary" type="submit">Send Inquiry</button></form></div></section>
+
+<BaseLayout
+  title="Contact Zeta"
+  description="Connect with Zeta for career opportunities, leadership development, financial education, or general inquiries."
+>
+
+  <!-- Hero -->
+  <section class="page-hero page-hero-compact">
+    <div class="shell narrow">
+
+      <p class="eyebrow eyebrow-light">Contact Zeta</p>
+
+      <h1>Let's Start the Right Conversation</h1>
+
+      <p>
+        Whether you're exploring a career as a Financial Advisor, interested
+        in leadership development, seeking financial education, or simply
+        have a question, we'd be happy to hear from you. Complete the form
+        below and a member of our team will respond as soon as possible.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="shell form-layout">
+
+      <!-- Sidebar -->
+      <aside class="form-aside">
+
+        <p class="card-kicker">Career Opportunities</p>
+
+        <h2>Interested in Joining Zeta?</h2>
+
+        <p>
+          If you're ready to begin your professional journey with Zeta,
+          please complete our dedicated application form. This helps us
+          better understand your background, interests, and career goals
+          before we contact you.
+        </p>
+
+        <a class="button button-secondary" href="/careers/apply">
+          Apply Now
+        </a>
+
+        <hr>
+
+        <p class="card-kicker">Need Assistance?</p>
+
+        <p>
+          For questions about recruitment, leadership pathways, financial
+          education, partnerships, events, or other inquiries, simply use
+          the contact form.
+        </p>
+
+      </aside>
+
+      <!-- Contact Form -->
+      <form
+        class="application-form"
+        name="zeta-inquiry"
+        method="POST"
+        action="/success"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+
+        <input
+          type="hidden"
+          name="form-name"
+          value="zeta-inquiry"
+        />
+
+        <p class="visually-hidden">
+          <label>
+            Do not fill out this field if you are human.
+            <input name="bot-field" />
+          </label>
+        </p>
+
+        <fieldset>
+
+          <legend>Send an Inquiry</legend>
+
+          <label>
+            Full Name
+
+            <input
+              type="text"
+              name="full-name"
+              autocomplete="name"
+              required
+            />
+          </label>
+
+          <label>
+            Email Address
+
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+          </label>
+
+          <label>
+            Inquiry Type
+
+            <select name="inquiry-type" required>
+
+              <option value="">Select an option</option>
+
+              <option>Career Opportunities</option>
+
+              <option>Leadership Development</option>
+
+              <option>Financial Education</option>
+
+              <option>Partnerships & Community</option>
+
+              <option>Events</option>
+
+              <option>Media & Speaking</option>
+
+              <option>General Inquiry</option>
+
+            </select>
+
+          </label>
+
+          <label>
+            Your Message
+
+            <textarea
+              name="message"
+              rows="7"
+              placeholder="Tell us how we can help you..."
+              required
+            ></textarea>
+
+          </label>
+
+          <label class="checkbox-label">
+
+            <input
+              type="checkbox"
+              name="consent"
+              required
+            />
+
+            <span>
+              I consent to Zeta contacting me regarding this inquiry and
+              acknowledge that I have read the
+              <a href="/privacy">Privacy Notice</a>.
+            </span>
+
+          </label>
+
+        </fieldset>
+
+        <button
+          class="button button-primary"
+          type="submit"
+        >
+          Send Inquiry
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
 </BaseLayout>

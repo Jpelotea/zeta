@@ -7,6 +7,8 @@ const navItems = [
   { href: '/achievements', label: 'Achievements' },
   { href: '/education', label: 'Education' }
 ];
+
+const { pathname } = Astro.url;
 ---
 <header class="site-header" data-site-header>
   <div class="shell header-inner">
@@ -27,9 +29,16 @@ const navItems = [
 
     <nav id="primary-navigation" class="primary-nav" aria-label="Primary navigation" data-nav>
       <ul>
-        {navItems.map((item) => (
-          <li><a href={item.href}>{item.label}</a></li>
-        ))}
+        {navItems.map((item) => {
+          const isCurrent = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+          return (
+            <li>
+              <a href={item.href} aria-current={isCurrent ? "page" : undefined}>
+                {item.label}
+              </a>
+            </li>
+          );
+        })}
       </ul>
       <a class="button button-small button-primary nav-cta" href="/careers/apply">Be One of Us</a>
     </nav>

@@ -21,6 +21,8 @@ body {
   font-family: var(--font-family-body);
   line-height: var(--line-height-body);
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {

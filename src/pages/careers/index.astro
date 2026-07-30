@@ -1,10 +1,94 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
 ---
 <BaseLayout title="Career Opportunities | Zeta" description="Explore Financial Advisor development and leadership pathways with Zeta.">
-  <section class="page-hero"><div class="shell narrow"><p class="eyebrow eyebrow-light">Career Opportunities</p><h1>Explore a Professional Path Built Around Growth and Responsibility</h1><p>Zeta is seeking people who are willing to learn, serve clients responsibly, accept mentorship, and contribute to a professional community.</p><div class="button-row"><a class="button button-accent" href="/careers/apply">Start Your Application</a><a class="button button-ghost" href="/contact">Ask a Recruitment Question</a></div></div></section>
-  <section class="section" id="financial-advisor"><div class="shell feature-grid"><div><p class="eyebrow">Pathway 01</p><h2>Financial Advisor Development</h2><p class="section-intro">Designed for aspiring professionals, career shifters, and experienced client-facing people who want structured development in financial services.</p><ul class="check-list"><li>Orientation to the profession and expectations</li><li>Training, mentorship, and practical development</li><li>Financial education and client-service foundations</li><li>Opportunity to grow through demonstrated capability and responsibility</li></ul></div><div class="info-panel"><h3>Good starting indicators</h3><p>Professionalism, coachability, communication, reliability, a service orientation, and willingness to complete required training and licensing steps.</p><p><strong>Experience note:</strong> prior financial-services experience may be helpful, but relevant sales, customer-service, business-development, teaching, community, or leadership experience can also be valuable.</p></div></div></section>
-  <section class="section section-alt" id="leadership-pathway"><div class="shell feature-grid"><div class="info-panel info-panel-dark"><h3>Leadership readiness</h3><p>This pathway requires more than ambition. Candidates should show evidence of accountability, mentoring ability, professional judgment, team contribution, and long-term commitment to developing others.</p></div><div><p class="eyebrow">Pathway 02</p><h2>Leadership and Organization Building</h2><p class="section-intro">For professionals who want to develop the capability to mentor, guide teams, strengthen systems, and contribute to Zeta’s long-term growth.</p><ul class="check-list"><li>Leadership-development exposure</li><li>Mentoring and team-building practice</li><li>Increasing responsibility based on readiness and results</li><li>Long-term organization-building direction</li></ul></div></div></section>
-  <section class="section"><div class="shell narrow"><h2>What the process may include</h2><ol class="process-list"><li><strong>Explore:</strong> Review the opportunity, expectations, and development environment.</li><li><strong>Apply:</strong> Submit relevant background, career goals, availability, licensing status, and training readiness.</li><li><strong>Discuss:</strong> Participate in an initial conversation or orientation to clarify fit and expectations.</li><li><strong>Assess:</strong> Complete the appropriate interview, requirements, and readiness review.</li><li><strong>Develop:</strong> Begin the approved onboarding, training, licensing, and mentorship pathway.</li></ol><p class="verification-note">The final process, qualification standards, licensing requirements, compensation structure, and candidate status must be confirmed before public launch.</p></div></section>
-  <section class="final-cta"><div class="shell final-cta-inner"><div><p class="eyebrow eyebrow-light">Take the next step</p><h2>Ready to Explore Your Fit With Zeta?</h2><p>Submit an application when you are ready to be considered, or send an inquiry when you need more information first.</p></div><div class="button-row button-row-end"><a class="button button-accent" href="/careers/apply">Submit an Application</a><a class="button button-ghost" href="/contact">Send an Inquiry</a></div></div></section>
+  <header class="page-hero">
+    <div class="shell narrow">
+      <p class="eyebrow eyebrow-light">Career Opportunities</p>
+      <h1>Explore a Professional Path Built Around Growth and Responsibility</h1>
+      <p>Zeta is seeking people who are willing to learn, serve clients responsibly, accept mentorship, and contribute to a professional community.</p>
+      <div class="button-row">
+        <a class="button button-accent" href="/careers/apply">Start Your Application</a>
+        <a class="button button-ghost" href="/contact">Ask a Recruitment Question</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="financial-advisor">
+      <div class="shell feature-grid">
+        <article>
+          <SectionHeading 
+            eyebrow="Pathway 01" 
+            title="Financial Advisor Development" 
+            text="Designed for aspiring professionals, career shifters, and experienced client-facing people who want structured development in financial services." 
+          />
+          <ul class="check-list">
+            <li>Orientation to the profession and expectations</li>
+            <li>Training, mentorship, and practical development</li>
+            <li>Financial education and client-service foundations</li>
+            <li>Opportunity to grow through demonstrated capability and responsibility</li>
+          </ul>
+        </article>
+        
+        <aside class="info-panel">
+          <h3>Good starting indicators</h3>
+          <p>Professionalism, coachability, communication, reliability, a service orientation, and willingness to complete required training and licensing steps.</p>
+          <p><strong>Experience note:</strong> prior financial-services experience may be helpful, but relevant sales, customer-service, business-development, teaching, community, or leadership experience can also be valuable.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="leadership-pathway">
+      <div class="shell feature-grid">
+        <aside class="info-panel info-panel-dark">
+          <h3>Leadership readiness</h3>
+          <p>This pathway requires more than ambition. Candidates should show evidence of accountability, mentoring ability, professional judgment, team contribution, and long-term commitment to developing others.</p>
+        </aside>
+
+        <article>
+          <SectionHeading 
+            eyebrow="Pathway 02" 
+            title="Leadership and Organization Building" 
+            text="For professionals who want to develop the capability to mentor, guide teams, strengthen systems, and contribute to Zeta’s long-term growth." 
+          />
+          <ul class="check-list">
+            <li>Leadership-development exposure</li>
+            <li>Mentoring and team-building practice</li>
+            <li>Increasing responsibility based on readiness and results</li>
+            <li>Long-term organization-building direction</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell narrow">
+        <h2>What the process may include</h2>
+        <ol class="process-list">
+          <li><strong>Explore:</strong> Review the opportunity, expectations, and development environment.</li>
+          <li><strong>Apply:</strong> Submit relevant background, career goals, availability, licensing status, and training readiness.</li>
+          <li><strong>Discuss:</strong> Participate in an initial conversation or orientation to clarify fit and expectations.</li>
+          <li><strong>Assess:</strong> Complete the appropriate interview, requirements, and readiness review.</li>
+          <li><strong>Develop:</strong> Begin the approved onboarding, training, licensing, and mentorship pathway.</li>
+        </ol>
+        <p class="verification-note">The final process, qualification standards, licensing requirements, compensation structure, and candidate status must be confirmed before public launch.</p>
+      </div>
+    </section>
+  </main>
+
+  <section class="final-cta">
+    <div class="shell final-cta-inner">
+      <div>
+        <p class="eyebrow eyebrow-light">Take the next step</p>
+        <h2>Ready to Explore Your Fit With Zeta?</h2>
+        <p>Submit an application when you are ready to be considered, or send an inquiry when you need more information first.</p>
+      </div>
+      <div class="button-row button-row-end">
+        <a class="button button-accent" href="/careers/apply">Submit an Application</a>
+        <a class="button button-ghost" href="/contact">Send an Inquiry</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
