@@ -1,26 +1,45 @@
+/* Base Typographic Enhancements */
+body {
+  font-family: var(--font-family-body);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 h1,
 h2,
 h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-display);
+  color: var(--color-text-heading);
+  text-wrap: pretty;
+}
+
 p {
   text-wrap: pretty;
 }
 
+/* Brand Copy Elements */
 .brand-copy {
   line-height: var(--line-height-compact);
 }
 
 .brand-copy strong {
-  font-size: 1.05rem;
+  font-size: var(--font-size-body-lg);
   letter-spacing: var(--letter-spacing-brand);
   text-transform: uppercase;
 }
 
 .brand-copy small {
-  color: var(--color-text-subtle);
+  color: var(--color-text);
+  opacity: 0.75; /* Smooth fallback scaling across light/dark espresso states */
   font-size: var(--font-size-2xs);
   letter-spacing: var(--letter-spacing-caption);
 }
 
+/* Interactive & Navigation Elements */
 .primary-nav a:not(.button) {
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-semibold);
@@ -41,6 +60,7 @@ p {
   text-underline-offset: 0.28rem;
 }
 
+/* Hero Component Blocks */
 .hero h1 {
   font-size: var(--font-size-display-hero);
   line-height: var(--line-height-tightest);
@@ -87,6 +107,7 @@ p {
   line-height: var(--line-height-compact);
 }
 
+/* Editorial Content Layouts */
 .trust-grid p {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-strong);
@@ -123,6 +144,7 @@ p {
   font-weight: var(--font-weight-heaviest);
 }
 
+/* Contextual Graphic Cards */
 .career-card h3 {
   font-size: var(--font-size-display-sm);
   line-height: var(--line-height-snug);
@@ -152,6 +174,7 @@ p {
   line-height: var(--line-height-button);
 }
 
+/* Interface Component Forms */
 .application-form legend {
   font-size: var(--font-size-title-sm);
   font-weight: var(--font-weight-black);
@@ -169,14 +192,16 @@ p {
   font-weight: var(--font-weight-medium) !important;
 }
 
+/* Footer Hierarchy */
 .footer-heading {
-  font-size: 1rem;
+  font-size: var(--font-size-body-base);
 }
 
 .footer-bottom {
   font-size: var(--font-size-sm);
 }
 
+/* Responsive Overrides */
 @media (max-width: 760px) {
   .hero h1 {
     font-size: var(--font-size-display-hero-mobile);
