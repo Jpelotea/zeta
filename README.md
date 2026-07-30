@@ -1,41 +1,59 @@
 # Zeta Corporate Website
 
-A static-first, accessible corporate website for Zeta, designed for Netlify and built with Astro.
+A static-first, highly accessible corporate website for Zeta, designed for Netlify deployment and engineered with Astro.
 
 ## Why this stack
 
-- **Astro:** ideal for content-heavy corporate websites, leadership profiles, educational articles, and mostly static pages.
-- **Minimal JavaScript:** only the mobile navigation needs client-side JavaScript.
-- **Netlify:** continuous deployment, preview builds, forms, and simple hosting.
-- **No UI framework:** the design system is written in plain CSS to keep the site lean and easy to maintain.
+- **Astro:** Ideal for content-heavy corporate websites, leadership profiles, educational articles, and mostly static pages.
+- **Minimal JavaScript:** Only the mobile navigation requires minimal client-side JavaScript.
+- **Netlify:** Continuous deployment, preview builds, forms, and simple hosting.
+- **No UI Framework:** The design system is authored in vanilla CSS using modern tokens, keeping the footprint lean and eliminating runtime framework overhead.
+
+## CSS Architecture & Design System
+
+The styling layer is organized into a modular token-driven structure under `src/styles/`:
+
+1. **`tokens.css`**: Defines the core design tokens within `:root`. Contains the primitive palette (Manulife Green, Terracotta, Sage, Deep Espresso), fluid typography scales (`clamp`), responsive spacing increments, unified shadows, and an automated `prefers-color-scheme: dark` media block that flips the canvas seamlessly for dark mode environments.
+2. **`typography.css`**: Governs global editorial typesetting, line-height definitions, and structural layout headings using fluid token inheritance.
+3. **`utilities.css`**: Houses structural utility helpers, container maximum boundaries (`.prose`, `.narrow`), and accessible screen-reader visibility constraints.
+
+Global styles should be imported in your primary Astro layouts:
+```css
+@import "./tokens.css";
+@import "./typography.css";
+@import "./utilities.css";
+
+```
 
 ## Run locally
 
 ```bash
 npm install
 npm run dev
+
 ```
 
 ## Build
 
 ```bash
 npm run build
+
 ```
 
-Netlify settings:
+Netlify production specifications:
 
-- Build command: `npm run build`
-- Publish directory: `dist`
+* **Build command:** `npm run build`
+* **Publish directory:** `dist`
 
 ## Before launch
 
-1. Replace all SVG placeholder images in `public/images/` with approved, optimized photographs.
-2. Replace the placeholder domain in `astro.config.mjs`.
-3. Verify all leadership titles, achievements, testimonials, and event claims.
-4. Connect Netlify Forms email notifications or a CRM workflow.
-5. Add final privacy, consent, licensing, and regulatory wording after professional review.
-6. Add the actual Zeta logo and favicon.
+1. **Asset Optimization:** Replace all temporary SVG placeholder images in `public/images/` with approved, optimized photography.
+2. **Configuration:** Replace the placeholder production domain inside `astro.config.mjs`.
+3. **Content Verification:** Review and verify all leadership titles, financial statistics, achievements, testimonials, and event claims.
+4. **Form Integration:** Connect Netlify Forms email notifications or wire up a webhook to the production CRM workflow.
+5. **Legal Compliance:** Add final privacy policies, cookie consent flags, licensing agreements, and regulatory footers following legal review.
+6. **Branding:** Upload the official Zeta SVG logo marks and configure multi-resolution favicons.
 
 ## Content model
 
-The first release keeps content in Astro page files for simplicity. When Zeta begins publishing frequently, migrate articles and leadership profiles into Astro Content Collections using Markdown or connect a headless CMS.
+The initial release manages content within static Astro page files for simplicity. When Zeta scales publishing frequency, migrate corporate articles and leadership profiles into dedicated Astro Content Collections utilizing Markdown or connect an external headless CMS API layer.
