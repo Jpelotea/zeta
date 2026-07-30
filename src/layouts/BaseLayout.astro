@@ -27,14 +27,21 @@ const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0a2441" />
-    <link rel="canonical" href={canonical} />
+    <link rel="canonical" href={canonical.href} />
+    
+    <!-- Open Graph Metadata -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={socialImage} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:image" content={socialImage.href} />
+    
+    <!-- Twitter Metadata -->
     <meta name="twitter:card" content="summary_large_image" />
+    
     <title>{title}</title>
+    
+    <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Organization',
@@ -55,6 +62,8 @@ const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
       <slot />
     </main>
     <Footer />
-    <script src="/scripts/site.js" defer></script>
+    
+    <!-- Client Scripts -->
+    <script src="../../scripts/site.js"></script>
   </body>
 </html>
