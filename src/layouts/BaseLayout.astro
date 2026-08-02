@@ -14,7 +14,7 @@ const {
   title,
   description,
   canonicalPath = Astro.url.pathname,
-  image = '/images/zeta-social-preview.svg'
+  image = '/images/zeta-social-preview.png'
 } = Astro.props;
 
 const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
@@ -26,18 +26,25 @@ const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0a2441" />
+    <meta name="theme-color" content="#1F6E28" />
+    <link rel="icon" type="image/png" href="/images/zeta-favicon.png" />
+    <link rel="apple-touch-icon" href="/images/zeta-app-icon.png" />
     <link rel="canonical" href={canonical.href} />
     
     <!-- Open Graph Metadata -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
+    <meta property="og:site_name" content="Zeta" />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.href} />
     <meta property="og:image" content={socialImage.href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Zeta — Builder of Builders" />
     
     <!-- Twitter Metadata -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={socialImage.href} />
     
     <title>{title}</title>
     
@@ -48,6 +55,8 @@ const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
       name: 'Zeta',
       description,
       url: canonical.origin,
+      logo: new URL('/images/zeta-logo.png', canonical.origin).href,
+      slogan: 'Builder of Builders',
       leader: {
         '@type': 'Person',
         name: 'Shane Villasor Perez',
@@ -64,6 +73,6 @@ const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
     <Footer />
     
     <!-- Client Scripts -->
-    <script src="../../scripts/site.js"></script>
+    <script is:inline src="/scripts/site.js"></script>
   </body>
 </html>

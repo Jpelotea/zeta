@@ -1,55 +1,54 @@
 ---
+import SectionHeading from './SectionHeading.astro';
+
 const leaders = [
   {
     name: "Shane Villasor Perez",
     title: "Branch Head",
-    image: "/images/approved-placeholder images.svg/leader-approved placeholder-1.svg",
+    image: "/images/leader-placeholder-1.svg",
     focus: "Mentorship, leadership development, and organization building."
   },
   {
     name: "Marivien Tan",
     title: "Senior Unit Head",
-    image: "/images/approved-placeholder images.svg/leader-approved placeholder-2.svg", 
+    image: "/images/leader-placeholder-2.svg",
     focus: "Organization building and developing future leaders."
   },
   {
     name: "Janelyn Pacaonces",
     title: "Unit Head",
-    image: "/images/approved-placeholder images.svg/leader-approved placeholder-3.svg",
+    image: "/images/leader-placeholder-3.svg",
     focus: "Client service, coaching, and professional excellence."
   }
 ];
 ---
 
-<section class="py-16 bg-slate-50">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Leadership Team</h2>
-      <p class="mt-4 text-lg text-slate-600">
-        Driven by data, execution excellence, and strategic growth.
-      </p>
-    </div>
+<section class="section section-muted">
+  <div class="shell">
+    <SectionHeading
+      eyebrow="Leadership Community"
+      title="Leadership Team"
+      text="Meet the professionals guiding Zeta through mentorship, responsible leadership, and continuous development."
+      align="center"
+    />
 
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {teamMembers.map((member) => (
-        <div class="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition shadow-sm hover:shadow-md">
-          <div class="aspect-[4/5] bg-slate-100 relative overflow-hidden">
-            <img 
-              src={member.image} 
-              alt={`Professional portrait placeholder for ${member.name}`}
-              class="h-full w-full object-cover object-center"
-              loading="lazy"
-              decoding="async"
-            />
+    <div class="leader-grid">
+      {leaders.map((leader) => (
+        <article class="leader-card">
+          <img
+            src={leader.image}
+            alt={`Professional portrait placeholder for ${leader.name}`}
+            width="640"
+            height="760"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="leader-card-copy">
+            <p class="card-kicker">{leader.title}</p>
+            <h3>{leader.name}</h3>
+            <p>{leader.focus}</p>
           </div>
-          <div class="flex flex-1 flex-col p-6">
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-slate-900">{member.name}</h3>
-              <p class="mt-1 text-sm font-medium text-teal-700">{member.role}</p>
-              <p class="mt-4 text-sm text-slate-600 leading-relaxed">{member.bio}</p>
-            </div>
-          </div>
-        </div>
+        </article>
       ))}
     </div>
   </div>
