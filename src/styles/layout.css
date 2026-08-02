@@ -81,8 +81,7 @@
 }
 
 .hero-copy,
-.hero-visual,
-.hero-statement {
+.hero-visual {
   position: relative;
 }
 
@@ -102,11 +101,6 @@
 
 .hero-visual {
   min-height: var(--height-hero-visual);
-}
-
-.hero-statement {
-  z-index: var(--z-floating);
-  max-width: var(--layout-statement);
 }
 
 .trust-grid {
@@ -167,13 +161,14 @@
 .testimonial-grid,
 .content-grid,
 .article-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
   gap: var(--space-11xl);
 }
 
 .milestone-collage {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-8xl);
+  align-items: stretch;
 }
 
 .milestone-large {
@@ -217,7 +212,9 @@
 
 @media (max-width: 1040px) {
   .hero-grid {
+    min-height: auto;
     grid-template-columns: 1fr;
+    padding-block: var(--space-section-compact);
   }
 
   .hero-visual {
@@ -226,10 +223,6 @@
     margin-inline: auto;
   }
 
-  .leader-grid,
-  .testimonial-grid,
-  .content-grid,
-  .article-grid,
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

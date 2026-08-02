@@ -1,51 +1,72 @@
 :root {
-  /* Primitive Palette — New Brand Specification */
-  --palette-green-700: #00693c;        /* Core Primary (Manulife Green) */
-  --palette-green-600: #00883c;        /* Interface Alternative (Forest Green) */
-  --palette-sage-500: #87a99b;         /* Secondary Anchor (Muted Sage) */
-  --palette-sage-400: #87a89b;         /* Alternate Secondary (Sage Green) */
-  --palette-terracotta-500: #c86d51;   /* Dynamic Accent (Warm Terracotta) */
-  --palette-sandstone-100: #efece6;    /* Base Editorial Canvas (Warm Sandstone) */
-  --palette-alabaster-50: #f9fbf9;     /* High-Contrast Digital Canvas */
-  --palette-espresso-950: #3b2f2f;     /* High-End Typography (Deep Espresso) */
+  color-scheme: light;
+
+  /* Primitive Palette */
+  --palette-green-900: #123f19;
+  --palette-green-800: #185620;
+  --palette-green-700: #1f6e28;
+  --palette-green-600: #2b7f35;
+  --palette-sage-600: #5d7b5f;
+  --palette-sage-500: #87a688;
+  --palette-sage-400: #aec2af;
+  --palette-teal-300: #c6d5c7;
+  --palette-terracotta-600: #9a742b;
+  --palette-terracotta-500: #cea962;
+  --palette-sandstone-100: #f4f1e8;
+  --palette-ivory-200: #e7eee7;
+  --palette-alabaster-50: #fbfaf5;
+  --palette-espresso-950: #2c2724;
   --palette-white: #ffffff;
 
   /* Semantic Colors */
-  --color-background: var(--palette-sandstone-100);       /* Premium Swiss Canvas */
-  --color-background-subtle: var(--palette-alabaster-50); /* High-contrast zones */
+  --color-background: var(--palette-sandstone-100);
+  --color-background-subtle: var(--palette-alabaster-50);
   --color-background-muted: var(--palette-ivory-200);
-  --color-background-strong: var(--palette-green-700);    /* Primary green blocks */
-  --color-background-brand: var(--palette-green-700);     /* Main Brand Accent */
-  --color-background-accent: var(--palette-terracotta-500); /* CTA Highlights */
+  --color-background-strong: var(--palette-green-700);
+  --color-background-strongest: var(--palette-green-900);
+  --color-background-brand: var(--palette-green-700);
+  --color-background-accent: var(--palette-terracotta-500);
+  --color-background-accent-hover: #d9b978;
+  --color-background-image-placeholder: var(--palette-sage-400);
   
-  --color-text: var(--palette-espresso-950);               /* Softer High-End Text */
+  --color-text: var(--palette-espresso-950);
   --color-text-heading: var(--palette-espresso-950);
+  --color-text-muted: #625b56;
+  --color-text-subtle: #756d67;
+  --color-text-brand: var(--palette-green-700);
+  --color-text-accent: #ead49c;
   --color-text-inverse: var(--palette-white);
+  --color-text-inverse-muted: rgba(255, 255, 255, 0.78);
+  --color-text-inverse-subtle: rgba(255, 255, 255, 0.64);
   
   --color-interactive: var(--palette-green-700);
   --color-interactive-hover: var(--palette-green-600);
-  --color-interactive-secondary: var(--palette-sage-500);
+  --color-interactive-secondary: var(--palette-sage-600);
   
-  --color-focus: var(--palette-terracotta-500);
-  --color-selection: var(--palette-sage-500);
+  --color-focus: var(--palette-green-700);
+  --color-selection: var(--palette-green-700);
   --color-selection-text: var(--palette-white);
 
+  --color-border: rgba(44, 39, 36, 0.13);
+  --color-border-strong: rgba(206, 169, 98, 0.58);
+  --color-border-input: rgba(44, 39, 36, 0.28);
+
   /* Transparent Colors — Updated to Brand Specifications */
-  --color-header-background: rgba(249, 251, 249, 0.94);  /* Transparent Alabaster Cream */
-  --color-header-border: rgba(59, 47, 47, 0.08);          /* Soft Espresso Border */
-  --color-surface-inverse-soft: rgba(255, 255, 255, 0.04);
-  --color-surface-inverse-hover: rgba(255, 255, 255, 0.11);
+  --color-header-background: rgba(255, 253, 249, 0.9);
+  --color-header-border: rgba(44, 39, 36, 0.1);
+  --color-surface-inverse-soft: rgba(255, 255, 255, 0.07);
+  --color-surface-inverse-hover: rgba(255, 255, 255, 0.15);
   --color-border-inverse: rgba(255, 255, 255, 0.68);
   --color-border-inverse-subtle: rgba(255, 255, 255, 0.12);
   --color-border-inverse-art: rgba(255, 255, 255, 0.35);
-  --color-caption-background: rgba(59, 47, 47, 0.86);     /* Deep Espresso Mask */
-  --color-accent-wash: rgba(200, 109, 81, 0.10);          /* 10% Terracotta Tint */
-  --color-node-ring: rgba(135, 169, 155, 0.12);           /* 12% Sage Tint */
-  --color-focus-ring: rgba(0, 105, 60, 0.15);             /* 15% Brand Green Tint */
+  --color-caption-background: rgba(18, 63, 25, 0.9);
+  --color-accent-wash: rgba(206, 169, 98, 0.17);
+  --color-node-ring: rgba(135, 166, 136, 0.2);
+  --color-focus-ring: rgba(31, 110, 40, 0.2);
 
   /* Typography Infrastructure */
-  --font-family-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-family-display: Iowan Old Style, Baskerville, "Times New Roman", serif;
+  --font-family-body: "Avenir Next", Avenir, "Segoe UI", ui-sans-serif, sans-serif;
+  --font-family-display: "Iowan Old Style", Baskerville, Georgia, serif;
   
   --font-size-2xs: 0.72rem;
   --font-size-xs: 0.76rem;
@@ -143,10 +164,10 @@
   --radius-portrait: 12rem 12rem 1.5rem 1.5rem;
   
   /* Elevation Shadows — Re-anchored to Deep Espresso & Brand Elements */
-  --shadow-sm: 0 10px 30px rgba(59, 47, 47, 0.08);
-  --shadow-lg: 0 24px 70px rgba(59, 47, 47, 0.16);
-  --shadow-button: 0 10px 24px rgba(0, 105, 60, 0.20);
-  --shadow-button-accent: 0 12px 28px rgba(200, 109, 81, 0.20);
+  --shadow-sm: 0 10px 30px rgba(18, 63, 25, 0.09);
+  --shadow-lg: 0 24px 70px rgba(18, 63, 25, 0.17);
+  --shadow-button: 0 10px 24px rgba(31, 110, 40, 0.22);
+  --shadow-button-accent: 0 12px 28px rgba(206, 169, 98, 0.24);
   --shadow-focus: 0 0 0 3px var(--color-focus-ring);
   --shadow-node: 0 0 0 10px var(--color-node-ring);
   
@@ -183,12 +204,12 @@
   --z-content: 2;
   --z-floating: 3;
 
-  /* Composed Visual Gradients — Remapped for Swiss Editorial Tones */
-  --gradient-hero: linear-gradient(130deg, var(--palette-espresso-950) 0%, var(--palette-green-700) 100%);
-  --gradient-page-hero: linear-gradient(135deg, var(--palette-espresso-950), var(--palette-green-700) 60%, var(--palette-sage-500));
-  --gradient-philosophy: linear-gradient(145deg, var(--palette-espresso-950), var(--palette-green-700));
+  /* Composed Visual Gradients */
+  --gradient-hero: linear-gradient(132deg, var(--palette-green-900) 0%, var(--palette-green-800) 48%, var(--palette-green-700) 100%);
+  --gradient-page-hero: linear-gradient(135deg, var(--palette-green-900) 0%, var(--palette-green-800) 58%, var(--palette-green-700) 100%);
+  --gradient-philosophy: linear-gradient(145deg, var(--palette-green-900), var(--palette-green-700));
   --gradient-careers: linear-gradient(180deg, var(--palette-white), var(--palette-sandstone-100));
-  --gradient-cta: linear-gradient(120deg, var(--palette-green-700), var(--palette-espresso-950));
+  --gradient-cta: linear-gradient(120deg, var(--palette-green-700), var(--palette-green-900));
 
   /* Legacy Backward-Compatibility Aliases */
   --teal-700: var(--palette-green-700);
@@ -203,59 +224,5 @@
 @media (max-width: 760px) {
   :root {
     --layout-shell-gutter: 1.25rem;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Semantic Colors — Inverted for Dark Mode Canvas */
-    --color-background: var(--palette-espresso-950);         /* Deep Espresso Canvas */
-    --color-background-subtle: rgba(59, 47, 47, 0.4);        /* Tinted dark surface overlay */
-    --color-background-muted: rgba(59, 47, 47, 0.6);         /* Semi-opaque dark division layout */
-    --color-background-strong: var(--palette-green-700);
-    --color-background-brand: var(--palette-green-600);       /* Vibrant green selection for low-light legibility */
-    --color-background-accent: var(--palette-terracotta-500);
-    
-    --color-text: var(--palette-alabaster-50);                 /* High-Contrast Light Body Text */
-    --color-text-heading: var(--palette-white);
-    --color-text-inverse: var(--palette-espresso-950);
-    
-    --color-interactive: var(--palette-sage-400);             /* Muted Sage for optimized dark surface interactive link visibility */
-    --color-interactive-hover: var(--palette-sage-500);
-    --color-interactive-secondary: var(--palette-green-600);
-    
-    --color-focus: var(--palette-terracotta-500);
-    --color-selection: var(--palette-green-700);
-    --color-selection-text: var(--palette-white);
-
-    /* Transparent Color Tokens — Recalibrated for Dark Contrast */
-    --color-header-background: rgba(59, 47, 47, 0.94);       /* Dark frosted glass header layout */
-    --color-header-border: rgba(249, 251, 249, 0.08);         /* Subtle Alabaster framing edge */
-    --color-caption-background: rgba(249, 251, 249, 0.86);
-    --color-accent-wash: rgba(200, 109, 81, 0.15);
-    --color-node-ring: rgba(135, 169, 155, 0.20);
-    --color-focus-ring: rgba(0, 136, 60, 0.25);
-
-    /* Elevation Shadows — Recalibrated for Deep Ambient Layouts */
-    --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.35);
-    --shadow-lg: 0 24px 70px rgba(0, 0, 0, 0.50);
-    --shadow-button: 0 10px 24px rgba(0, 0, 0, 0.40);
-    --shadow-button-accent: 0 12px 28px rgba(0, 0, 0, 0.45);
-
-    /* Composed Visual Gradients — Remapped for Dark Contexts */
-    --gradient-hero: linear-gradient(130deg, rgba(30, 24, 24, 1) 0%, var(--palette-espresso-950) 100%);
-    --gradient-page-hero: linear-gradient(135deg, var(--palette-espresso-950), rgba(0, 105, 60, 0.4) 60%, var(--palette-sage-500));
-    --gradient-philosophy: linear-gradient(145deg, var(--palette-espresso-950), var(--palette-green-700));
-    --gradient-careers: linear-gradient(180deg, var(--palette-espresso-950), rgba(59, 47, 47, 0.5));
-    --gradient-cta: linear-gradient(120deg, var(--palette-green-700), var(--palette-espresso-950));
-
-    /* Legacy Backward-Compatibility Aliases */
-    --teal-700: var(--palette-green-600);
-    --teal-600: var(--palette-green-700);
-    --gold-500: var(--palette-terracotta-500);
-    --gold-300: var(--palette-sage-400);
-    --ivory-100: var(--palette-espresso-950);
-    --ivory-200: rgba(59, 47, 47, 0.4);
-    --ink-900: var(--palette-alabaster-50);
   }
 }

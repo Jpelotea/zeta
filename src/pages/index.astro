@@ -6,16 +6,19 @@ const leaders = [
   {
     name: 'Shane Villasor Perez',
     title: 'Branch Head',
+    image: '/images/approved-placeholder%20images.svg/leader-approved%20placeholder-1.svg',
     focus: 'Mentorship, leadership development, and organization building.'
   },
   {
     name: 'Marivien Tan',
     title: 'Senior Unit Head',
+    image: '/images/approved-placeholder%20images.svg/leader-approved%20placeholder-2.svg',
     focus: 'Organization building and developing future leaders.'
   },
   {
     name: 'Janelyn Pacaonces',
     title: 'Unit Head',
+    image: '/images/approved-placeholder%20images.svg/leader-approved%20placeholder-3.svg',
     focus: 'Client service, coaching, and professional excellence.'
   }
 ];
@@ -93,11 +96,6 @@ const educationTopics = [
         </figcaption>
       </figure>
 
-      <div class="hero-statement">
-        <span>Builder of Builders</span>
-        <strong>Grow. Lead. Build Others.</strong>
-      </div>
-
     </div>
 
   </div>
@@ -155,7 +153,7 @@ const educationTopics = [
   <section class="section leadership-feature">
     <div class="shell feature-grid">
       <div class="feature-image-wrap">
-        <img src="/images/shane-leadership-placeholder.svg" alt="Placeholder for an approved image representing Shane Perez's professional and leadership journey" width="900" height="760" loading="lazy" />
+        <img src="/images/shane-perez-portrait.png" alt="Shane Villasor Perez seated in her office as Branch Head" width="672" height="867" loading="lazy" />
       </div>
       <div class="feature-copy">
         <SectionHeading
@@ -206,7 +204,7 @@ const educationTopics = [
         </article>
       </div>
       <div class="centered-actions">
-        <a class="button button-primary" href="/careers"> Learn More</a>
+        <a class="button button-primary" href="/careers">Learn More</a>
         <a class="button button-secondary" href="/careers/apply">Be One of Us</a>
       </div>
     </div>
@@ -231,7 +229,7 @@ const educationTopics = [
       {leaders.map((leader, index) => (
         <article class="leader-card">
           <img
-            src={`/images/leader-placeholder-${index + 1}.svg`}
+            src={leader.image}
             alt="Professional portrait placeholder for a Zeta leadership profile"
             width="640"
             height="760"
@@ -267,7 +265,7 @@ const educationTopics = [
         text="Every milestone reflects Zeta's commitment to professional development, leadership excellence, and continuous growth. From industry events and leadership conferences to team promotions, professional recognitions, and organizational achievements, each accomplishment represents meaningful progress in building capable professionals and future leaders."
       />
 
-      <a class="button button-primary" href="/achievements">
+      <a class="button button-accent" href="/achievements">
         View Events & Achievements
       </a>
 

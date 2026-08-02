@@ -12,13 +12,41 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 0;
   font-family: var(--font-family-display);
   color: var(--color-text-heading);
   text-wrap: pretty;
 }
 
 p {
+  margin: 0 0 var(--space-8xl);
   text-wrap: pretty;
+}
+
+ul,
+ol,
+blockquote,
+figure {
+  margin-top: 0;
+}
+
+.section .narrow > h2,
+.prose h2 {
+  margin-bottom: var(--space-8xl);
+}
+
+.section .narrow > h2:not(:first-child),
+.prose h2:not(:first-child) {
+  margin-top: var(--space-21xl);
+}
+
+.section .narrow > h3,
+.prose h3 {
+  margin: var(--space-19xl) 0 var(--space-6xl);
+}
+
+.prose li + li {
+  margin-top: var(--space-2xl);
 }
 
 /* Brand Copy Elements */
@@ -95,18 +123,6 @@ p {
   font-size: var(--font-size-md);
 }
 
-.hero-statement span {
-  font-size: var(--font-size-2xs);
-  font-weight: var(--font-weight-black);
-  letter-spacing: var(--letter-spacing-statement);
-  text-transform: uppercase;
-}
-
-.hero-statement strong {
-  font-size: var(--font-size-title-lg);
-  line-height: var(--line-height-compact);
-}
-
 /* Editorial Content Layouts */
 .trust-grid p {
   font-size: var(--font-size-lg);
@@ -123,6 +139,7 @@ p {
 
 .section-intro {
   font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-reading);
 }
 
 .principles-panel span,
@@ -204,6 +221,6 @@ p {
 /* Responsive Overrides */
 @media (max-width: 760px) {
   .hero h1 {
-    font-size: var(--font-size-display-hero-mobile);
+    font-size: clamp(2.65rem, 12vw, 4.25rem);
   }
 }
